@@ -5,4 +5,11 @@ public class ContratoTrabalho {
     public double valorNormal;
     public double valorExtra;
 
+    public boolean contratoAdicional(){
+        if (funcionario.temFilho()){
+            return true;
+        } else
+            return false;
+    }
+
 }

@@ -5,6 +5,11 @@ public class FolhaPagamento {
         double salarioNormal = qtdHorasTrabalhadas * contratoTrabalho.valorNormal;
         double salarioExtra = qtdHorasExtras * contratoTrabalho.valorExtra;
         double salarioFinal = salarioNormal + salarioExtra;
+
+        if (contratoTrabalho.contratoAdicional()){
+            salarioFinal+= salarioFinal * 0.10;
+            return salarioFinal;
+        }
         return salarioFinal;
     }
 }

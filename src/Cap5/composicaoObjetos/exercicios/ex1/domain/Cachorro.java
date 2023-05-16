@@ -1,4 +1,4 @@
-package Cap5.composicaoObjetos.exercicios.domain;
+package Cap5.composicaoObjetos.exercicios.ex1.domain;
 
 public class Cachorro {
     public String nome;

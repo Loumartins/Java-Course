@@ -1,6 +1,6 @@
-package Cap5.composicaoObjetos.exercicios.test;
+package Cap5.composicaoObjetos.exercicios.ex1.test;
 
-import Cap5.composicaoObjetos.exercicios.domain.Cachorro;
+import Cap5.composicaoObjetos.exercicios.ex1.domain.Cachorro;
 
 public class CachorroTest {
     public static void main(String[] args) {

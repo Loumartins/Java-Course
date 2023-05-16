@@ -1,16 +1,15 @@
 package Cap5.composicaoObjetos.domain;
 
 public class CalculadoraImc {
-    public double peso;
-    public  double altura;
 
-    public IndiceMassaCorporal calcular(){
+
+    public IndiceMassaCorporal calcular(double peso, double altura){
 
         double imcCalculado = peso / (altura * altura);
 
         IndiceMassaCorporal imc = new IndiceMassaCorporal();
-        imc.peso = this.peso;
-        imc.altura = this.altura;
+        imc.peso = peso;
+        imc.altura = altura;
         imc.resultado = imcCalculado;
         return imc;
     }

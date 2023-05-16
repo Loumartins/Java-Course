@@ -48,10 +48,8 @@ public class Principal {
 
         double calculoValorRevenda = meuCarro.calcularValorRevenda();
 
-        System.out.printf("O tempo de uso em anos do seu carro é de: %d ano(s) %n",meuCarro.calcularTempoDeUsoEmAnos());
-        System.out.printf("O valor de revenda do carro: %s é de R$%.2f%n ",meuCarro.modelo,
-                calculoValorRevenda);
-        System.out.printf("O valor do ipva é de %.2f", meuCarro.calcularIpva());
+        meuCarro.imprimirResumoDepreciacao();
+        //System.out.printf("O valor do ipva é de %.2f", meuCarro.calcularIpva());
 
 
     }

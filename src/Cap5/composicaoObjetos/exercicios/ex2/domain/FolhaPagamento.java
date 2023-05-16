@@ -5,6 +5,7 @@ public class FolhaPagamento {
     public int qtdHorasTrabalhadas;
     public Holorite calcularSalario(ContratoTrabalho contratoTrabalho){
         Holorite holorite = new Holorite();
+        holorite.funcionario = contratoTrabalho.funcionario;
         double salarioNormal = this.qtdHorasTrabalhadas * contratoTrabalho.valorNormal;
         double salarioExtra = this.qtdHorasExtras * contratoTrabalho.valorExtra;
         double salarioFinal = salarioNormal + salarioExtra;

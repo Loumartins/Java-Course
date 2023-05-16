@@ -25,7 +25,7 @@ public class FolhaPagamentoTest {
 
         Holorite salario = folhaPagamento.calcularSalario(ct);
 
-        System.out.print("O salario do funcionário no final do mês é de R$"+ salario.resultado);
+        System.out.println("O salario do funcionário no final do mês é de R$"+ salario.resultado);
 
 
 

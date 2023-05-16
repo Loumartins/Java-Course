@@ -1,9 +1,9 @@
 package Cap5.composicaoObjetos.exercicios.ex2.domain;
 
 public class FolhaPagamento {
-    public double calcularSalario(int qtdHorasTrabalhadas, int qtdHorasExtras, double valorNormal, double valorExtra){
-        double salarioNormal = qtdHorasTrabalhadas * valorNormal;
-        double salarioExtra = qtdHorasExtras * valorExtra;
+    public double calcularSalario(int qtdHorasTrabalhadas, int qtdHorasExtras, ContratoTrabalho contratoTrabalho){
+        double salarioNormal = qtdHorasTrabalhadas * contratoTrabalho.valorNormal;
+        double salarioExtra = qtdHorasExtras * contratoTrabalho.valorExtra;
         double salarioFinal = salarioNormal + salarioExtra;
         return salarioFinal;
     }

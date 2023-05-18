@@ -6,13 +6,16 @@ public class Produto {
     public double precoCusto;
     public double precoVenda;
 
+
     public void alterarPrecoCusto(double precoCusto){
        this.precoCusto = precoCusto;
     }
 
-    public void imprimirCustoEmbalagem(){
+    public static void imprimirCustoEmbalagem(){
         System.out.printf("Custo com embalagem: %.2f%n", Produto.custoEmbalagem);
     }
-
+    public static void alterarCustoEmbalagem(double custoEmbalagem){
+        Produto.custoEmbalagem = custoEmbalagem;
+    }
 
 }

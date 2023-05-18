@@ -6,6 +6,9 @@ public class Produto {
     public double precoCusto;
     public double precoVenda;
 
+    public static double calcularCustoTotal(Produto produto){
+        return produto.precoCusto + Produto.custoEmbalagem;
+    }
 
     public void alterarPrecoCusto(double precoCusto){
        this.precoCusto = precoCusto;

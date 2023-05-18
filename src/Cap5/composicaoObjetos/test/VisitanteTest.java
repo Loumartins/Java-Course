@@ -8,8 +8,9 @@ public class VisitanteTest {
         novoVisitante.idade = 12;
         novoVisitante.nome = "Joao";
 
-        if (novoVisitante.idade < 18){
-            System.out.println("Acessso nao permitido para menores de 18 anos");
+        if (novoVisitante.possuiAcessoRestritoPorIdade()){
+            System.out.printf("Acessso nao permitido para menores de %d anos",
+                    Visitante.IDADE_MINIMA_ACESSO_IRRESTRITO);
         } else {
             System.out.println("Acesso liberado");
         }

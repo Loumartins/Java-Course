@@ -4,6 +4,7 @@ import Cap5.composicaoObjetos.domain.Aeronave;
 
 public class AeronaveTest {
     public static void main(String[] args) {
+        //rvw0G77
         Aeronave aviaoGol = new Aeronave();
         aviaoGol.totalAssentos = 100;
 

@@ -5,7 +5,7 @@ import Cap5.composicaoObjetos.domain.Visitante;
 
 public class VisitanteTest {
     public static void main(String[] args) {
-        Visitante novoVisitante = new Visitante();
+        var novoVisitante = new Visitante();
         novoVisitante.idade = 18;
         novoVisitante.nome = "Joao";
 
@@ -15,7 +15,7 @@ public class VisitanteTest {
         } else {
             System.out.println("Acesso liberado");
         }
-        CadastroPortaria cadastroPortaria = new CadastroPortaria();
+        var cadastroPortaria = new CadastroPortaria();
         cadastroPortaria.cadastrar(novoVisitante);
     }
 }

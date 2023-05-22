@@ -1,4 +1,4 @@
-package Cap6.codigoLimpo.domain;
+package Cap6.codigoLimpo.aula3.domain;
 
 public class Cliente {
     static final double TAXA_LIMITE_CREDITO = 0.10;

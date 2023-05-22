@@ -12,8 +12,8 @@ public class NumeroUtil {
     }
     public static String descobrirMaiorNumeroInteiro(int n1, int n2, int n3){
         String resposta = "";
-        if (n1 > n2 && n1 > n3){
 
+        if (n1 > n2 && n1 > n3){
             resposta = "N1 é o maior numero";
             return resposta;
         } else if (n2 > n1 && n2 > n3){

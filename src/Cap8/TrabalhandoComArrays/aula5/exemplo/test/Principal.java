@@ -5,6 +5,7 @@ import Cap8.TrabalhandoComArrays.aula5.exemplo.domain.Tenis;
 
 public class Principal {
     public static void main(String[] args) {
+
         Pessoa pessoa1 = new Pessoa();
         pessoa1.nome = "Luiz Henrique";
         pessoa1.tamanhoPe = 39;

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Turma {
     public String nomeIdentificacao;
     public String nomeProfessora;
-     public Aluno[] alunos;
+     public Aluno[] alunos = new Aluno[0];
 
      public void adicionarAluno(Aluno aluno){
          this.alunos = Arrays.copyOf(alunos, alunos.length+1);
@@ -14,7 +14,9 @@ public class Turma {
      }
      public void imprimirAluno(){
          for (Aluno aluno : alunos) {
-             System.out.println(aluno.nome +""+ aluno.idade);
+             if (aluno != null){
+                 System.out.println("Aluno: " + aluno.nome + " - " + aluno.idade + " anos" );
+             }
          }
      }
 }

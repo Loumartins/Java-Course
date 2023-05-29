@@ -3,7 +3,7 @@ package Cap8.TrabalhandoComArrays.exercicios.exc2.domain;
 import java.util.Arrays;
 
 public class Cardapio {
-    ItemCardapio[] itens = new ItemCardapio[0];
+   public ItemCardapio[] itens = new ItemCardapio[0];
 
     public void adicionarItem(ItemCardapio item){
         this.itens = Arrays.copyOf(this.itens, itens.length+1);
@@ -18,13 +18,8 @@ public class Cardapio {
     public void imprimirItensCardapio(double precoMinimo, double precoMaximo){
         for (ItemCardapio item : itens) {
             if (item.preco >=precoMinimo && item.preco <=precoMaximo){
-                System.out.println(item);
+                System.out.println(item.descricao);
             }
         }
-
-        /*
-         TODO implementar codigo para imprimir no console os itens do cardapio que
-              estiverem entre o preço minimo e o preço máximo.
-       */
     }
 }

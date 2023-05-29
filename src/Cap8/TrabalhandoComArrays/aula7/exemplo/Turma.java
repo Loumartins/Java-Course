@@ -8,7 +8,7 @@ public class Turma {
      public Aluno[] alunos = new Aluno[0];
 
      public void adicionarAluno(Aluno aluno){
-         this.alunos = Arrays.copyOf(alunos, alunos.length+1);
+         this.alunos = Arrays.copyOf(this.alunos, this.alunos.length+1);
          this.alunos[alunos.length - 1] = aluno;
 
      }

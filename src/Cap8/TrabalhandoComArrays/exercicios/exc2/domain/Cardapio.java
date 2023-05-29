@@ -1,9 +1,13 @@
 package Cap8.TrabalhandoComArrays.exercicios.exc2.domain;
 
+import java.util.Arrays;
+
 public class Cardapio {
-    ItemCardapio[] itens;
+    ItemCardapio[] itens = new ItemCardapio[0];
 
     public void adicionarItem(ItemCardapio item){
+        this.itens = Arrays.copyOf(this.itens, itens.length+1);
+        this.itens[itens.length - 1] = item;
         // TODO implementar inclusão de item do cardápio
     }
 

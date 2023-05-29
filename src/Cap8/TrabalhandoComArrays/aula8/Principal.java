@@ -10,7 +10,8 @@ public class Principal {
         int indiceExclusao = 2;
 
         System.arraycopy(numerosJogoAtual, 0, numerosNovoJogo, 0, indiceExclusao);
-        System.arraycopy(numerosJogoAtual, indiceExclusao + 1 , numerosNovoJogo, 2, 4);
+        System.arraycopy(numerosJogoAtual, indiceExclusao + 1 , numerosNovoJogo, 2,
+                numerosNovoJogo.length - indiceExclusao);
 
         System.out.println(Arrays.toString(numerosJogoAtual));
         System.out.println(Arrays.toString(numerosNovoJogo));

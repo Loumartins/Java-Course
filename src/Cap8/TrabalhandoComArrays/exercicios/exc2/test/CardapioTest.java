@@ -24,6 +24,10 @@ public class CardapioTest {
 
         cardapio.imprimirItensCardapio(80, 150);
 
+        cardapio.removerItem(0);
+        System.out.println("----");
+
+        cardapio.imprimirItensCardapio(0 , 150);
 
     }
 }

@@ -1,6 +1,6 @@
-package Cap8.TrabalhandoComArrays.exercicios.exc1.test;
+package Cap8.TrabalhandoComArrays.exercicios1.exc1.test;
 
-import Cap8.TrabalhandoComArrays.exercicios.exc1.domain.Calendario;
+import Cap8.TrabalhandoComArrays.exercicios1.exc1.domain.Calendario;
 
 public class CalendarioTest {
     public static void main(String[] args) {

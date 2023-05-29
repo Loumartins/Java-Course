@@ -1,4 +1,4 @@
-package Cap8.TrabalhandoComArrays.exercicios.exc1.domain;
+package Cap8.TrabalhandoComArrays.exercicios1.exc1.domain;
 
 public class Calendario {
 

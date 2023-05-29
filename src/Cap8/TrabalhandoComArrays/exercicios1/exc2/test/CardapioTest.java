@@ -1,7 +1,7 @@
-package Cap8.TrabalhandoComArrays.exercicios.exc2.test;
+package Cap8.TrabalhandoComArrays.exercicios1.exc2.test;
 
-import Cap8.TrabalhandoComArrays.exercicios.exc2.domain.Cardapio;
-import Cap8.TrabalhandoComArrays.exercicios.exc2.domain.ItemCardapio;
+import Cap8.TrabalhandoComArrays.exercicios1.exc2.domain.Cardapio;
+import Cap8.TrabalhandoComArrays.exercicios1.exc2.domain.ItemCardapio;
 
 public class CardapioTest {
     public static void main(String[] args) {

@@ -16,6 +16,12 @@ public class Cardapio {
     }
 
     public void imprimirItensCardapio(double precoMinimo, double precoMaximo){
+        for (ItemCardapio item : itens) {
+            if (item.preco >=precoMinimo && item.preco <=precoMaximo){
+                System.out.println(item);
+            }
+        }
+
         /*
          TODO implementar codigo para imprimir no console os itens do cardapio que
               estiverem entre o preço minimo e o preço máximo.

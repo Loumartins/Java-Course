@@ -20,7 +20,7 @@ public class Principal {
         //servicoCobranca.pagar(fatura, "joao@algaworks.com", "maria@algaworks.com");
 
         //passando apenas um parametro
-        servicoCobranca.pagar(fatura);
+        servicoCobranca.pagar(fatura, "joao@algaworks.com");
 
 
     }

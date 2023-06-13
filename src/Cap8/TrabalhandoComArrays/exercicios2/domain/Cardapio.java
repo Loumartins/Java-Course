@@ -7,7 +7,8 @@ public class Cardapio {
 
  public ArrayList<ItemCardapio> itens = new ArrayList<>();
    public void adicionarItem(ItemCardapio item) {
-        itens.add(item);
+
+       itens.add(item);
     }
   public  void removerItem(int indice) {
        itens.remove(indice);

@@ -1,4 +1,4 @@
-package Cap10.construtores.aula1.domain;
+package Cap10.construtores.domain;
 
 public class Produto {
     int quantidadeEstoque;

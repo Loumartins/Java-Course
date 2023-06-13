@@ -1,6 +1,6 @@
-package Cap10.construtores.aula1.test;
+package Cap10.construtores.test;
 
-import Cap10.construtores.aula1.domain.Produto;
+import Cap10.construtores.domain.Produto;
 
 public class Principal {
     public static void main(String[] args) {

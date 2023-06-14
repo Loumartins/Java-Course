@@ -2,7 +2,7 @@ package Cap10.construtores.test;
 
 import Cap10.construtores.domain.Produto;
 
-public class Principal {
+public class ProdutoTest {
     public static void main(String[] args) {
         Produto produto1 = new Produto( "Picanha 1kg (Peça)");
         Produto produto2 = new Produto( "Maminha 1kg (Peça)",10);

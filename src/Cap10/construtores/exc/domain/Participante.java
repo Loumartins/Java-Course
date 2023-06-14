@@ -25,5 +25,9 @@ public class Participante {
         System.out.println(this.nome);
         System.out.println(this.saldoDePontos);
     }
+
+    public void creditarPontos(int pontos){
+        saldoDePontos+=pontos;
+    }
 }
 

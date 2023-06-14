@@ -11,9 +11,7 @@ public class Produto {
     public Produto() {
     }
     public Produto(String nome) {
-        Objects.requireNonNull(nome, "Nome é obrigatório");
-        this.nome = nome;
-        this.quantidadeEstoque = QUANTIDADE_INICIAL_PADRAO;
+        this(nome, QUANTIDADE_INICIAL_PADRAO);
     }
     public Produto(String nome, int quantidadeEstoque) {
         Objects.requireNonNull(nome, "Nome é obrigatório");

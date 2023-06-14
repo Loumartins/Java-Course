@@ -20,5 +20,10 @@ public class Participante {
         }
         this.saldoDePontos = saldoDePontosInicial;
     }
+
+    public void imprimir(){
+        System.out.println(this.nome);
+        System.out.println(this.saldoDePontos);
+    }
 }
 

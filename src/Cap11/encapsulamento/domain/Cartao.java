@@ -19,6 +19,10 @@ public class Cartao {
     }
 
     public void debitar (double valorDebito){
+        if (getSaldo() < valorDebito){
+            throw new RuntimeException("Saldo insuficiente para pagamento");
+        }
+
         saldo-=valorDebito;
     }
     public void depositar (double valorDeposito){

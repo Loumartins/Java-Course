@@ -19,7 +19,7 @@ public class CartaoTest {
         reciboPagamento.imprimir();
 
 
-        System.out.println(cartao.saldo);
+        System.out.println(cartao.getSaldo());
     }
 }
 

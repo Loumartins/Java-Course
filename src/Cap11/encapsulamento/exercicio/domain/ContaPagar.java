@@ -37,6 +37,10 @@ public class ContaPagar {
         return pago;
     }
 
+    public boolean isPendente(){
+        return !isPago();
+    }
+
     public Fornecedor getFornecedor() {
         return fornecedor;
     }
@@ -45,13 +49,17 @@ public class ContaPagar {
         this.fornecedor = fornecedor;
     }
 //
-//    public void pagar(){
-//        if (isPago() == true){
-//            throw new RuntimeException("Nao é possivel pagar uma conta que ja está paga");
-//        }
-//
-//    }
-//    public void cancelarPagamento(){
-//        if ()
-//    }
+    public void pagar(){
+        if (isPago() == true){
+            throw new RuntimeException("Nao é possivel pagar uma conta que ja está paga");
+        }
+     pago = true;
+    }
+
+    public void cancelarPagamento(){
+        if (isPendente()){
+            throw new RuntimeException("Conta já esta pendente");
+        }
+        pago = false;
+    }
 }

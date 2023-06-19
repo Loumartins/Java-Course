@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.exercicio.test;
+package Cap11.encapsulamento.test;
 
 import Cap11.encapsulamento.domain.Horario;
 

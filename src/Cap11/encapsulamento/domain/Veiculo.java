@@ -36,4 +36,8 @@ public class Veiculo {
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
+
+    public double getValorDiaria() {
+        return grupo.getValorDiaria();
+    }
 }

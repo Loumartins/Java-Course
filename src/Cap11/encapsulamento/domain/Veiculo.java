@@ -21,5 +21,19 @@ public class Veiculo {
         this.placa = placa;
     }
 
+    public GrupoVeiculo getGrupo() {
+        return grupo;
+    }
 
+    public void setGrupo(GrupoVeiculo grupo) {
+        this.grupo = grupo;
+    }
+
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
 }

@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.domain;
+package Cap11.encapsulamento.domain.locacao;
 
 public class Locacao {
     private Veiculo veiculo;

@@ -6,6 +6,9 @@ public class Cartao {
     private String titular;
     private double saldo;
 
+    public Cartao() {
+    }
+
     public Cartao(String titular) {
         this.titular = titular;
     }

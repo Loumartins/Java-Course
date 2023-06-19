@@ -44,11 +44,14 @@ public class ContaPagar {
     public void setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
     }
-
-    public void pagar(){
-        if (isPago() == true){
-            throw new RuntimeException("Nao é possivel pagar uma conta que ja está paga");
-        }
-
-    }
+//
+//    public void pagar(){
+//        if (isPago() == true){
+//            throw new RuntimeException("Nao é possivel pagar uma conta que ja está paga");
+//        }
+//
+//    }
+//    public void cancelarPagamento(){
+//        if ()
+//    }
 }

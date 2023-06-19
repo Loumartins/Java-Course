@@ -5,8 +5,8 @@ public class Horario {
     private int minuto;
 
     public Horario(int hora, int minuto) {
-        this.hora = hora;
-        this.minuto = minuto;
+        setHora(hora);
+        setMinuto(minuto);
     }
 
     public int getHora() {
@@ -29,5 +29,8 @@ public class Horario {
             throw new RuntimeException("Minuto inválido: " + minuto);
         }
         this.minuto = minuto;
+    }
+    public String formatar(){
+        return String.format("%d:%d", getHora(), getMinuto());
     }
 }

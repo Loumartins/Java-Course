@@ -8,8 +8,10 @@ public class ServicoLocacao {
 
         //refatorando metodo acima com law-of-demeter
 
-        double totalDiarias = locacao.getValorDiaria();
+        //double totalDiarias = locacao.getValorDiarias() * locacao.getQuantidadeDiarias();
 
-        locacao.getVeiculo().setDisponivel(false);
+        double totalDiarias = locacao.calcularTotalDiarias();
+
+        locacao.reservarVeiculo();
     }
 }

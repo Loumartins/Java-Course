@@ -28,4 +28,12 @@ public class Locacao {
     public double getValorDiaria() {
         return veiculo.getValorDiaria();
     }
+
+    public double calcularTotalDiarias(){
+        return getValorDiaria() * quantidadeDiarias;
+    }
+
+    public void reservarVeiculo(){
+        veiculo.setDisponivel(false);
+    }
 }

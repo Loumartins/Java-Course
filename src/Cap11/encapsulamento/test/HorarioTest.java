@@ -1,6 +1,6 @@
 package Cap11.encapsulamento.test;
 
-import Cap11.encapsulamento.domain.Horario;
+import Cap11.encapsulamento.exercicio.domain.Horario;
 
 public class HorarioTest {
     public static void main(String[] args) {

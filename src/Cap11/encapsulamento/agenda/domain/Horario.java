@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.domain.agenda.domain;
+package Cap11.encapsulamento.agenda.domain;
 
 public class Horario {
     private int hora;
@@ -7,13 +7,18 @@ public class Horario {
     public Horario() {
     }
 
+    public Horario(int hora, int minuto) {
+        this.hora = hora;
+        this.minuto = minuto;
+    }
+
     public int getHora() {
         return hora;
     }
 
     public void setHora(int hora) {
         if (hora < 0 || hora > 23){
-            throw new IllegalArgumentException("Não é possivel colocar a hora solicitada");
+            throw new IllegalArgumentException("Não é possivel indicar a hora solicitada");
         }
         this.hora = hora;
     }
@@ -29,5 +34,7 @@ public class Horario {
         this.minuto = minuto;
     }
 
-
+    public String formatar(){
+        return String.format("%dh%dm", getHora(), getMinuto());
+    }
 }

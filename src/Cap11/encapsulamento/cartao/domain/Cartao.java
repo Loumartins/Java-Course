@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.domain.cartao;
+package Cap11.encapsulamento.cartao.domain;
 
 public class Cartao {
     public static final double TARIFA_DEPOSITO = 0.10;

@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.domain.agenda.domain;
+package Cap11.encapsulamento.agenda.domain;
 
 public class Agendamento {
     private Horario horario;

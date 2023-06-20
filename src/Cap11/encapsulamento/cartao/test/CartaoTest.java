@@ -1,6 +1,6 @@
-package Cap11.encapsulamento.test;
+package Cap11.encapsulamento.cartao.test;
 
-import Cap11.encapsulamento.domain.cartao.*;
+import Cap11.encapsulamento.cartao.domain.*;
 
 public class CartaoTest {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.domain.locacao;
+package Cap11.encapsulamento.locacao.domain;
 
 public class ServicoLocacao {
     public void confirmarLocacao(Locacao locacao){

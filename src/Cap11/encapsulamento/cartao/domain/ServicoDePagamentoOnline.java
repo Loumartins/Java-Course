@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.domain.cartao;
+package Cap11.encapsulamento.cartao.domain;
 
 public class ServicoDePagamentoOnline {
 

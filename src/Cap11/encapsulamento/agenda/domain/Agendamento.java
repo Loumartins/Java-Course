@@ -27,4 +27,8 @@ public class Agendamento {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public String getHorarioFormatado() {
+        return horario.formatar();
+    }
 }

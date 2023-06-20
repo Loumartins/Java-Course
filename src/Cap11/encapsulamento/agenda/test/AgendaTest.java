@@ -13,6 +13,6 @@ public class AgendaTest {
         imprimir(agendamentoBarba);
     }
     public static void imprimir(Agendamento agendamento){
-        System.out.printf("%s às %s%n", agendamento.getDescricao(), agendamento.getHorario().formatar());
+        System.out.printf("%s às %s%n", agendamento.getDescricao(), agendamento.getHorarioFormatado());
     }
 }

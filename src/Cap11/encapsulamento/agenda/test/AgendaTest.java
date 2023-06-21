@@ -7,8 +7,8 @@ public class AgendaTest {
     public static void main(String[] args) {
         Horario horario = new Horario(10, 30);
         Agendamento agendamentoCabelo = new Agendamento(horario, "Corte de cabelo");
-        horario.setHora(11);
-        horario.setMinuto(45);
+//        horario.setHora(11);
+//        horario.setMinuto(45);
         Agendamento agendamentoBarba = new Agendamento(horario, "Corte de barba");
 
         imprimir(agendamentoCabelo);

@@ -1,24 +1,19 @@
 package Cap11.encapsulamento.agenda.domain;
 
 public class Agendamento {
-    private Horario horario;
+    private final Horario horario;
     private String descricao;
 
-    public Agendamento() {
-    }
 
     public Agendamento(Horario horario, String descricao) {
-        this.horario = horario;
+        this.horario = new Horario(horario.getHora(), horario.getMinuto());
         this.descricao = descricao;
     }
 
     public Horario getHorario() {
-        return horario;
+        return new Horario(horario.getHora(), horario.getMinuto());
     }
 
-    public void setHorario(Horario horario) {
-        this.horario = horario;
-    }
 
     public String getDescricao() {
         return descricao;

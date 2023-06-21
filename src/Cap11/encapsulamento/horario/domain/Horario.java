@@ -1,4 +1,4 @@
-package Cap11.encapsulamento.exercicio.domain;
+package Cap11.encapsulamento.horario.domain;
 
 public class Horario {
     private int hora;

@@ -4,8 +4,6 @@ public class Horario {
     private int hora;
     private int minuto;
 
-    public Horario() {
-    }
 
     public Horario(int hora, int minuto) {
         this.hora = hora;

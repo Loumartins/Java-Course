@@ -1,7 +1,7 @@
 package Cap11.encapsulamento.agenda.domain;
 
 public class Agendamento {
-    private final Horario horario;
+    private Horario horario;
     private String descricao;
 
 
@@ -14,6 +14,9 @@ public class Agendamento {
         return new Horario(horario.getHora(), horario.getMinuto());
     }
 
+    public void setHorario(Horario horario) {
+        this.horario = horario;
+    }
 
     public String getDescricao() {
         return descricao;

@@ -38,7 +38,7 @@ public class Conta {
         if (valorSaque <= 0){
             throw new IllegalArgumentException("Valor do saque deve ser maior que 0");
         }
-        if (valorSaque < saldo){
+        if (valorSaque > saldo){
             throw new RuntimeException("Valor de saldo deve ser maior que valor do saque");
         }
         saldo -=valorSaque;
@@ -48,5 +48,11 @@ public class Conta {
             throw new IllegalArgumentException("Valor de deposito deve ser maior que 0");
         }
         saldo+= valorDeposito;
+    }
+    public void imprimirDemonstrativo(){
+        System.out.println("Agência: "+ getAgencia());
+        System.out.println("Conta: " +getNumero());
+        System.out.println("Titular: " + titular.getNome());
+        System.out.println("Saldo: " + getSaldo());
     }
 }

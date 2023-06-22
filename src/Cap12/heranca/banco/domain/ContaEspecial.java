@@ -24,4 +24,24 @@ public class ContaEspecial extends ContaInvestimento {
     public void debitarTarifaMensal(){
         sacar(getTarifaMensal());
     }
+    public double getSaldoDisponivel(){
+        return getSaldo() + getLimiteChequeEspecial();
+    }
+    @Override
+    public void imprimirDemonstrativo() {
+        super.imprimirDemonstrativo();
+        System.out.println("Saldo Disponivel: " + getSaldoDisponivel());
+    }
+
+    @Override
+    public void sacar(double valorSaque) {
+        super.sacar(valorSaque);
+        if (valorSaque <= 0){
+            throw new IllegalArgumentException("Nao é possivel sacar um valor menor ou igual a 0");
+        }
+        if (getSaldoDisponivel() < valorSaque){
+            throw new RuntimeException("Saldo insuficiente para saque");
+        }
+        saldo-=valorSaque;
+    }
 }

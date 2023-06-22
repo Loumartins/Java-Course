@@ -13,14 +13,14 @@ public class ContaTest1 {
         contaEspecial.setTarifaMensal(90);
 
         contaEspecial.imprimirDemonstrativo();
-        System.out.println("-------");
-        contaEspecial.depositar(100);
-
-        contaEspecial.imprimirDemonstrativo();
-        System.out.println("-------");
-        contaEspecial.sacar(200);
-
-        contaEspecial.debitarTarifaMensal();
-        contaEspecial.imprimirDemonstrativo();
+//        System.out.println("-------");
+//        contaEspecial.depositar(2000);
+//
+//        contaEspecial.imprimirDemonstrativo();
+//        System.out.println("-------");
+//        contaEspecial.sacar(200);
+//
+//        contaEspecial.debitarTarifaMensal();
+//        contaEspecial.imprimirDemonstrativo();
     }
 }

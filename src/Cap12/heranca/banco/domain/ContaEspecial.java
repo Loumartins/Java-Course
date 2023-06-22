@@ -22,7 +22,6 @@ public class ContaEspecial extends ContaInvestimento {
     }
 
     public void debitarTarifaMensal(){
-
-
+        sacar(getTarifaMensal());
     }
 }

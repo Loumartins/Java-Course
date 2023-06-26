@@ -35,13 +35,12 @@ public class ContaEspecial extends ContaInvestimento {
 
     @Override
     public void sacar(double valorSaque) {
-        super.sacar(valorSaque);
         if (valorSaque <= 0){
             throw new IllegalArgumentException("Nao é possivel sacar um valor menor ou igual a 0");
         }
         if (getSaldoDisponivel() < valorSaque){
             throw new RuntimeException("Saldo insuficiente para saque");
         }
-        saldo-=valorSaque;
+        setSaldo(getSaldo() - valorSaque);
     }
 }

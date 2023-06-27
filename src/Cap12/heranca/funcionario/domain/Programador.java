@@ -25,10 +25,17 @@ public class Programador extends Funcionario {
     }
 
     @Override
-    protected double calcularSalario(int horasTrabalhadas) {
+    protected final double calcularSalario(int horasTrabalhadas) {
         if (isTemBonus() == false){
             return super.calcularSalario(horasTrabalhadas);
         }
-        return super.calcularSalario(horasTrabalhadas) + getValorBonus();
+        return super.calcularSalario(horasTrabalhadas) + valorBonus;
+    }
+
+    @Override
+    public String toString() {
+        return "Programador{" +
+                "valorBonus=" + valorBonus +
+                "} " + super.toString();
     }
 }

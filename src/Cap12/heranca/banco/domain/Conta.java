@@ -56,4 +56,13 @@ public class Conta {
         System.out.println("Titular: " + titular.getNome());
         System.out.println("Saldo: " + getSaldo());
     }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "titular=" + titular.getNome()+
+                ", agencia=" + agencia +
+                ", numero=" + numero +
+                '}';
+    }
 }

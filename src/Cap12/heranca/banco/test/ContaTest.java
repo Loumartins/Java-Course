@@ -23,5 +23,7 @@ public class ContaTest {
 
         conta1.imprimirDemonstrativo();
 
+        System.out.println(conta1);
+
     }
 }

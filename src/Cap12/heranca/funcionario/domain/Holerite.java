@@ -11,8 +11,8 @@ public record Holerite(String nome, String mesAno, double valorSalario) {
     }
 
     public void imprimir(){
-        System.out.printf("O nome do funcionário é: %s, o mes é: $s e o valor de salário é de" +
-                "%.2f%n", nome, mesAno, valorSalario);
+        System.out.printf("O nome do funcionário é: %s, o mes trabalhado foi: %s e o valor de salário é de: %.2f%n",
+        nome, mesAno, valorSalario);
     }
 
 }

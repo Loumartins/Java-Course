@@ -48,4 +48,12 @@ public class ContaEspecial extends ContaInvestimento {
         }
         setSaldo(getSaldo() - valorSaque);
     }
+
+    @Override
+    public String toString() {
+        return "ContaEspecial{" +
+                "tarifaMensal=" + tarifaMensal +
+                ", limiteChequeEspecial=" + limiteChequeEspecial +
+                '}' + super.toString();
+    }
 }

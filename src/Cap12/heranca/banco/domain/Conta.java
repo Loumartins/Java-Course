@@ -60,7 +60,7 @@ public class Conta {
     @Override
     public String toString() {
         return "Conta{" +
-                "titular=" + titular.getNome()+
+                "titular=" + (titular != null ? titular.getNome() : null )+
                 ", agencia=" + agencia +
                 ", numero=" + numero +
                 '}';

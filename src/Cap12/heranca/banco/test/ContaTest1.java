@@ -5,10 +5,8 @@ import Cap12.heranca.banco.domain.Titular;
 
 public class ContaTest1 {
     public static void main(String[] args) {
-        ContaEspecial contaEspecial = new ContaEspecial();
-        contaEspecial.setTitular(new Titular("Luiz Henrique", "234.123.234-45"));
-        contaEspecial.setAgencia(1234);
-        contaEspecial.setNumero(000121);
+        Titular titular = new Titular("Luiz Henrique", "234.123.234-45");
+        ContaEspecial contaEspecial = new ContaEspecial(titular,1234, 99999,90.0);
         contaEspecial.setLimiteChequeEspecial(1000);
         contaEspecial.setTarifaMensal(90);
 

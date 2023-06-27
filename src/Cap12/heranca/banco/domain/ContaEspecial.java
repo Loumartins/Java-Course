@@ -2,6 +2,11 @@ package Cap12.heranca.banco.domain;
 
 public class ContaEspecial extends ContaInvestimento {
 
+    public ContaEspecial(Titular titular, int agencia, int numero, double tarifaMensal) {
+        super(titular, agencia, numero);
+        this.tarifaMensal = tarifaMensal;
+    }
+
     private double tarifaMensal;
     private double limiteChequeEspecial;
 

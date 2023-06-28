@@ -11,6 +11,6 @@ public class Principal {
         contaEspecial.setLimiteChequeEspecial(1000);
         contaEspecial.depositar(100);
 
-        Conta conta = (Conta) contaEspecial;
+        Conta conta = contaEspecial;
     }
 }

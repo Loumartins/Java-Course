@@ -27,11 +27,18 @@ public class Conta {
     public Titular getTitular() {
         return titular;
     }
+    protected void validarSaldoParaSaque(double valorSaque) {
+        if (getSaldo() < valorSaque) {
+            throw new RuntimeException("Saldo insuficiente para saque");
+        }
+    }
 
     public void sacar(double valorSaque){
         if (valorSaque > getSaldo()){
             throw new IllegalArgumentException("Valor do saque é maior que o valor de saldo");
         }
+        validarSaldoParaSaque(valorSaque);
+
         saldo-=valorSaque;
     }
     public void depositar(double valorDeposito){

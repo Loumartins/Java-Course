@@ -36,6 +36,20 @@ public class ContaEspecial extends ContaInvestimento {
 
     @Override
     protected void validarSaldoParaSaque(double valorSaque) {
-        super.validarSaldoParaSaque(valorSaque);
+        if (getSaldoDisponivel() < valorSaque) {
+            throw new RuntimeException("Saldo insuficiente para saque");
+        }
+    }
+
+    public void depitarTarifaMensal(){
+        sacar(getTarifaMensal());
+    }
+
+    @Override
+    public String toString() {
+        return "ContaEspecial{" +
+                "tarifaMensal=" + tarifaMensal +
+                ", limiteChequeEspecial=" + limiteChequeEspecial +
+                "} " + super.toString();
     }
 }

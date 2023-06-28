@@ -6,11 +6,10 @@ import Cap13.polimorfismo.banco.domain.Titular;
 
 public class Principal1 {
     public static void main(String[] args) {
-        Titular titular = new Titular("Joao da Silva", "123.432.556-43");
-        ContaEspecial contaEspecial = new ContaEspecial(1234,9999, titular);
-        contaEspecial.setLimiteChequeEspecial(1000);
-        contaEspecial.depositar(100);
 
-        Conta conta = contaEspecial;
+       ContaEspecial conta1 = new ContaEspecial(1234,9999, new Titular("Joao da silva", "123.454.212-45"));
+       conta1.setLimiteChequeEspecial(1000);
+       ContaEspecial conta2 = new ContaEspecial(2322,34343,new Titular("Maria Joana", "978.433.556-76"));
+       conta2.depositar(300);
     }
 }

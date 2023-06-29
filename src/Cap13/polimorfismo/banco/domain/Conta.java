@@ -27,6 +27,10 @@ public class Conta {
     public Titular getTitular() {
         return titular;
     }
+
+    public boolean possuiGratuidadeDeImpressao(){
+        return false;
+    }
     protected void validarSaldoParaSaque(double valorSaque) {
         if (getSaldo() < valorSaque) {
             throw new RuntimeException("Saldo insuficiente para saque");

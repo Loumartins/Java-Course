@@ -34,8 +34,8 @@ public class Conta {
     }
 
     public void sacar(double valorSaque){
-        if (valorSaque > getSaldo()){
-            throw new IllegalArgumentException("Valor do saque é maior que o valor de saldo");
+        if (valorSaque <= 0){
+            throw new IllegalArgumentException("Valor do saque deve ser maior que 0");
         }
 
         validarSaldoParaSaque(valorSaque);

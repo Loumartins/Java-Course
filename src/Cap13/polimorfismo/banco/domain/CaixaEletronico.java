@@ -1,4 +1,4 @@
-package Cap13.polimorfismo.banco;
+package Cap13.polimorfismo.banco.domain;
 
 import Cap13.polimorfismo.banco.domain.ContaEspecial;
 

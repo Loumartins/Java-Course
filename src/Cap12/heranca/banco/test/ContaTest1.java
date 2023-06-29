@@ -10,15 +10,15 @@ public class ContaTest1 {
         contaEspecial.setLimiteChequeEspecial(1000);
         contaEspecial.setTarifaMensal(90);
 
-        contaEspecial.imprimirDemonstrativo();
-        System.out.println("-------");
-        contaEspecial.depositar(100);
-
-        contaEspecial.imprimirDemonstrativo();
-        System.out.println("-------");
+//        contaEspecial.imprimirDemonstrativo();
+//        System.out.println("-------");
+//        contaEspecial.depositar(100);
+//
+//        contaEspecial.imprimirDemonstrativo();
+//        System.out.println("-------");
         contaEspecial.sacar(200);
 
         contaEspecial.debitarTarifaMensal();
-        contaEspecial.imprimirDemonstrativo();
+       contaEspecial.imprimirDemonstrativo();
    }
 }

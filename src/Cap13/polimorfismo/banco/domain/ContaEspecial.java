@@ -5,8 +5,9 @@ public class ContaEspecial extends ContaInvestimento {
     private double tarifaMensal;
     private double limiteChequeEspecial;
 
-    public ContaEspecial(int agencia, int numero, Titular titular) {
+    public ContaEspecial(int agencia, int numero, Titular titular, double tarifaMensal) {
         super(agencia, numero, titular);
+        this.tarifaMensal = tarifaMensal;
     }
 
     public double getTarifaMensal() {
@@ -25,7 +26,7 @@ public class ContaEspecial extends ContaInvestimento {
         this.limiteChequeEspecial = limiteChequeEspecial;
     }
     public double getSaldoDisponivel(){
-        return getSaldo() + limiteChequeEspecial;
+        return getSaldo() + getLimiteChequeEspecial();
     }
 
     @Override
@@ -35,7 +36,7 @@ public class ContaEspecial extends ContaInvestimento {
     }
 
     @Override
-    protected void validarSaldoParaSaque(double valorSaque) {
+    protected final void validarSaldoParaSaque(double valorSaque) {
         if (getSaldoDisponivel() < valorSaque) {
             throw new RuntimeException("Saldo insuficiente para saque");
         }

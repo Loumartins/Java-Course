@@ -37,6 +37,7 @@ public class Conta {
         if (valorSaque > getSaldo()){
             throw new IllegalArgumentException("Valor do saque é maior que o valor de saldo");
         }
+
         validarSaldoParaSaque(valorSaque);
 
         saldo-=valorSaque;

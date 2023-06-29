@@ -2,6 +2,7 @@ package Cap13.polimorfismo.banco.test;
 
 import Cap13.polimorfismo.banco.domain.CaixaEletronico;
 import Cap13.polimorfismo.banco.domain.ContaEspecial;
+import Cap13.polimorfismo.banco.domain.ContaSalario;
 import Cap13.polimorfismo.banco.domain.Titular;
 
 public class Principal1 {
@@ -13,13 +14,16 @@ public class Principal1 {
 
         ContaEspecial conta2 = new ContaEspecial(2222, 88888,new Titular("Maria Joana", "232.544.565-65"), 90);
 
+        ContaSalario conta3 = new ContaSalario(2321, 334334,new Titular("Francisco Souza", "232.544.565-65"), 18_000);
+
         conta1.depositar(300);
         // conta1.imprimirDemonstrativo();
 
-        caixaEletronico.transferir(conta1, conta2, 50);
+        caixaEletronico.transferir(conta1, conta3, 50);
         conta1.imprimirDemonstrativo();
         System.out.println("-------");
-        conta2.imprimirDemonstrativo();
+        conta3.imprimirDemonstrativo();
+
 
     }
 }

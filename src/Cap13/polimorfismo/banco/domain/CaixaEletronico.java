@@ -5,7 +5,7 @@ import Cap13.polimorfismo.banco.domain.ContaEspecial;
 public class CaixaEletronico {
 
     public static final double TARIFA_TRANSFERENCIA = 10;
-    public void transferir(ContaEspecial contaOrigem, ContaEspecial contaDestino,
+    public void transferir(Conta contaOrigem, Conta contaDestino,
                            double valorTransferencia){
         System.out.printf("Transferindo R$%.2f da conta %d/%d para %d/%d%n"
         ,valorTransferencia, contaOrigem.getAgencia(), contaOrigem.getNumero(), contaDestino.getNumero(),

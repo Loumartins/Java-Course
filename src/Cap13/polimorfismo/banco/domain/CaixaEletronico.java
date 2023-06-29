@@ -23,15 +23,17 @@ public class CaixaEletronico {
             if (contaInvestimento.getValorTotalInvestimento() > 0){
                 System.out.println("Impressao do demonstrativo é gratuita");
             } else {
-                System.out.printf("Custo da impressão: R$:%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
-                conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
+                debitarTarefarImpressaoDemonstrativo(conta);
             }
         } else{
-            System.out.printf("Custo da impressão: R$:%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
-            conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
+            debitarTarefarImpressaoDemonstrativo(conta);
         }
 
-
         conta.imprimirDemonstrativo();
+    }
+
+    private static void debitarTarefarImpressaoDemonstrativo(Conta conta) {
+        System.out.printf("Custo da impressão: R$:%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
+        conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
     }
 }

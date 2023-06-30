@@ -16,4 +16,8 @@ public class NotaFiscal {
     public double getValorTotal() {
         return valorTotal;
     }
+
+    public double calcularImpostos(){
+        return 0;
+    }
 }

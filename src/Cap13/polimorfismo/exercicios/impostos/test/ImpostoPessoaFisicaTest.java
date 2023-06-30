@@ -3,7 +3,7 @@ package Cap13.polimorfismo.exercicios.impostos.test;
 import Cap13.polimorfismo.exercicios.impostos.domain.GestorImposto;
 import Cap13.polimorfismo.exercicios.impostos.domain.PessoaFisica;
 
-public class ImpostoTest {
+public class ImpostoPessoaFisicaTest {
     public static void main(String[] args) {
         var gestorImpostos = new GestorImposto();
 

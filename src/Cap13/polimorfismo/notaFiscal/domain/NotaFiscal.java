@@ -1,6 +1,6 @@
 package Cap13.polimorfismo.notaFiscal.domain;
 
-public class NotaFiscal {
+public abstract class NotaFiscal {
     private String descricao;
     private double valorTotal;
 
@@ -17,9 +17,7 @@ public class NotaFiscal {
         return valorTotal;
     }
 
-    public double calcularImpostos(){
-        return 0;
-    }
+    public abstract double calcularImpostos();
 
     public void emitir(){
         System.out.printf("Emitindo nota fiscal para: %s%n", getDescricao());

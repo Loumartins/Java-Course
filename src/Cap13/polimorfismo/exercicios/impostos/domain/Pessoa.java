@@ -1,4 +1,4 @@
-package Cap13.polimorfismo.impostos.domain;
+package Cap13.polimorfismo.exercicios.impostos.domain;
 
 public abstract class Pessoa {
     private String nome;

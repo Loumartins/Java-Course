@@ -1,4 +1,4 @@
-package Cap13.polimorfismo.impostos.domain;
+package Cap13.polimorfismo.exercicios.impostos.domain;
 
 public abstract class PessoaJuridica extends Pessoa{
     private double faturamentoAnual;

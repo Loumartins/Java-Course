@@ -20,4 +20,10 @@ public class NotaFiscal {
     public double calcularImpostos(){
         return 0;
     }
+
+    public void emitir(){
+        System.out.printf("Emitindo nota fiscal para: %s%n", getDescricao());
+        System.out.printf("Valor total: %.2f%n", getValorTotal());
+        System.out.printf("Impostos: %.2f%n", calcularImpostos());
+    }
 }

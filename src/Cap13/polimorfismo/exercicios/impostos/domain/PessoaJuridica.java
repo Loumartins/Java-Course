@@ -10,12 +10,12 @@ public abstract class PessoaJuridica extends Pessoa{
         this.despesaAnual = despesaAnual;
     }
 
-    public void setFaturamentoAnual(double faturamentoAnual) {
-        this.faturamentoAnual = faturamentoAnual;
+    public double getFaturamentoAnual() {
+        return faturamentoAnual;
     }
 
-    public void setDespesaAnual(double despesaAnual) {
-        this.despesaAnual = despesaAnual;
+    public double getDespesaAnual() {
+        return despesaAnual;
     }
 
     public double getLucroAnual() {

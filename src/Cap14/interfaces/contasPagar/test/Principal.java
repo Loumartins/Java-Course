@@ -1,7 +1,7 @@
 package Cap14.interfaces.contasPagar.test;
 
 import Cap14.interfaces.contasPagar.domain.Beneficiario;
-import Cap14.interfaces.contasPagar.domain.Holerite;
+import Cap14.interfaces.contasPagar.domain.modelo.Holerite;
 import Cap14.interfaces.contasPagar.domain.ServicoContaPagar;
 
 public class Principal {

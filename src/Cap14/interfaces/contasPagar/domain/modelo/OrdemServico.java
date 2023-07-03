@@ -28,7 +28,7 @@ public class OrdemServico implements DocumentoPagavel {
 
     @Override
     public double getValorTotal() {
-        return getValorTotal();
+        return valorTotal;
     }
 
     @Override

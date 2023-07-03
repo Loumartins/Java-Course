@@ -11,6 +11,7 @@ public class GestorImposto {
         for (Pessoa pessoa : pessoas){
             System.out.printf("Impostos devidos de %s: %.2f%n", pessoa.getNome(), pessoa.calcularImposto());
             valorTotalImpostos+= pessoa.calcularImposto();
+            System.out.println("---------------");
         }
     }
 }

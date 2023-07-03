@@ -40,11 +40,11 @@ public class Holerite implements DocumentoPagavel {
 
     @Override
     public double getValorTotal() {
-        return 0;
+        return getValorHora() * getQuantidadeHoras();
     }
 
     @Override
     public Beneficiario getBeneficiario() {
-        return null;
+        return getFuncionario();
     }
 }

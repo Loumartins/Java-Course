@@ -1,5 +1,6 @@
-package Cap14.interfaces.contasPagar.domain;
+package Cap14.interfaces.contasPagar.domain.modelo;
 
+import Cap14.interfaces.contasPagar.domain.Beneficiario;
 import Cap14.interfaces.contasPagar.domain.interfaces.DocumentoPagavel;
 
 public class Holerite implements DocumentoPagavel {

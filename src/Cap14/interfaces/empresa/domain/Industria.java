@@ -5,6 +5,11 @@ public class Industria extends Empresa {
     private boolean  compensaEmissaoCo2;
 
 
+    public Industria(String razaoSocial, double totalFaturamento, boolean compensaEmissaoCo2) {
+        super(razaoSocial, totalFaturamento);
+        this.compensaEmissaoCo2 = compensaEmissaoCo2;
+    }
+
     public Industria(String razaoSocial, double totalFaturamento) {
         super(razaoSocial, totalFaturamento);
     }

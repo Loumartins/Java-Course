@@ -4,7 +4,7 @@ import Cap14.interfaces.contasPagar.domain.Beneficiario;
 
 public interface DocumentoPagavel {
 
-    public double getValorTotal();
+    double getValorTotal();
 
     Beneficiario getBeneficiario();
 

@@ -14,7 +14,7 @@ public class ServicoFinanciamento {
         System.out.printf("DEBUG: Financiamento aprovado.Limite máximo de %.2f%n", limiteAprovado);
     }
     public double consultarLimiteAprovado(Empresa empresa){
-        return 0;
+        return empresa.calcularLimiteAprovado();
     }
 
 }

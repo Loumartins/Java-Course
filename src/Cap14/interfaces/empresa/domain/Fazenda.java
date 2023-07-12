@@ -9,6 +9,14 @@ public class Fazenda extends Empresa {
         this.tamanhoEmHectares = tamanhoEmHectares;
     }
 
+    public double getTamanhoEmHectares() {
+        return tamanhoEmHectares;
+    }
+
+    public void setTamanhoEmHectares(double tamanhoEmHectares) {
+        this.tamanhoEmHectares = tamanhoEmHectares;
+    }
+
     @Override
     public double calcularLimiteAprovado() {
         return 0;

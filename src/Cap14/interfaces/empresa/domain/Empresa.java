@@ -26,6 +26,7 @@ public abstract class Empresa {
     }
 
     public abstract double calcularLimiteAprovado();
+
     public double calcularJuros(double valorSolicitado){
         return 0;
     }

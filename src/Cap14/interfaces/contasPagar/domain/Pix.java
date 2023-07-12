@@ -4,8 +4,6 @@ import Cap14.interfaces.contasPagar.domain.interfaces.DocumentoPagavel;
 import Cap14.interfaces.contasPagar.domain.interfaces.MetodoPagamento;
 
 public class Pix implements MetodoPagamento {
-
-
     @Override
     public void pagar(DocumentoPagavel documento) {
         Beneficiario beneficiario =  documento.getBeneficiario();

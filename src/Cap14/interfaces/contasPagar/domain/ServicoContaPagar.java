@@ -6,9 +6,7 @@ import Cap14.interfaces.contasPagar.domain.interfaces.MetodoPagamento;
 public class ServicoContaPagar {
 
     public void pagar(DocumentoPagavel documento){
-        MetodoPagamento metodoPagamento = new Pix();
-
-
+        MetodoPagamento metodoPagamento = new Transferencia();
 
         metodoPagamento.pagar(documento);
     }

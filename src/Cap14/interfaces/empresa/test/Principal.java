@@ -1,6 +1,7 @@
 package Cap14.interfaces.empresa.test;
 
 import Cap14.interfaces.empresa.domain.Fazenda;
+import Cap14.interfaces.empresa.domain.Funcionario;
 import Cap14.interfaces.empresa.domain.Industria;
 import Cap14.interfaces.empresa.domain.ParceiroFinanceiro;
 import Cap14.interfaces.empresa.servico.ServicoFinanciamento;
@@ -13,5 +14,8 @@ public class Principal {
         var industria = new Industria("Alimentos da Vovó", 900_000, true);
         servicoFinanciamento.solicitarFinanciamento(fazenda, 600_000);
         var parceiro = new ParceiroFinanceiro("Capital ABC", 2_000_000);
+        var funcionario = new Funcionario("Joao da silva", 18_000);
+
+        servicoFinanciamento.solicitarFinanciamento(funcionario, 90_000);
     }
 }

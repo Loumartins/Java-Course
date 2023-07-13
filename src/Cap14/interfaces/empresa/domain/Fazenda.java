@@ -28,10 +28,10 @@ public class Fazenda extends Empresa {
         return limiteAprovado;
     }
 
-    @Override
-    public double calcularJuros(double valorSolicitado) {
-        return 0;
-    }
+//    @Override
+//    public double calcularJuros(double valorSolicitado) {
+//        return 0;
+//    }
 }
 
 

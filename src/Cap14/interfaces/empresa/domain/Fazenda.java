@@ -28,10 +28,6 @@ public class Fazenda extends Empresa implements ClienteFinanciavel {
         return limiteAprovado;
     }
 
-//    @Override
-//    public double calcularJuros(double valorSolicitado) {
-//        return 0;
-//    }
 }
 
 

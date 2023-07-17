@@ -1,11 +1,10 @@
 package Cap14.interfaces.empresa.servico;
 
-import Cap14.interfaces.empresa.domain.Empresa;
-import Cap14.interfaces.empresa.domain.EmpresaFinanciavel;
+import Cap14.interfaces.empresa.domain.ClienteFinanciavel;
 
 public class ServicoFinanciamento {
-    public void solicitarFinanciamento(EmpresaFinanciavel empresa, double valorSolicitado){
-        double limiteAprovado = empresa.calcularLimiteAprovado();
+    public void solicitarFinanciamento(ClienteFinanciavel clienteFinanciavel, double valorSolicitado){
+        double limiteAprovado = clienteFinanciavel.calcularLimiteAprovado();
 
         if (limiteAprovado < valorSolicitado){
             throw new RuntimeException(String.format("Financiamento nao aprovado. Limite máximo de" +
@@ -14,8 +13,8 @@ public class ServicoFinanciamento {
 
         System.out.printf("DEBUG: Financiamento aprovado.Limite máximo de %.2f%n", limiteAprovado);
     }
-    public double consultarLimiteAprovado(EmpresaFinanciavel empresa){
-        return empresa.calcularLimiteAprovado();
+    public double consultarLimiteAprovado(ClienteFinanciavel clienteFinanciavel){
+        return clienteFinanciavel.calcularLimiteAprovado();
     }
 
 }

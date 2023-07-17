@@ -1,13 +1,22 @@
 package Cap14.interfaces.empresa.domain;
 
-public class Funcionario extends EmpresaFinanciavel {
+public class Funcionario implements ClienteFinanciavel {
 
+    private String nome;
     public static final int QUANTIDADE_SALARIOS_LIMITE_CREDITO = 5;
     private double salarioMensal;
 
     public Funcionario(String nome, double salarioMensal) {
-        super(nome, 0);
+        this.nome = nome;
         this.salarioMensal = salarioMensal;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public double getSalarioMensal() {

@@ -1,6 +1,6 @@
 package Cap14.interfaces.empresa.domain;
 
-public class Funcionario implements ClienteFinanciavel, PessoaBonificavel {
+public class Funcionario implements PessoaBonificavel {
 
     private String nome;
     public static final int QUANTIDADE_SALARIOS_LIMITE_CREDITO = 5;

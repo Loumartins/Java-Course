@@ -7,5 +7,6 @@ public class ServicoPagamentoBonus {
         double valor = pessoaBonificavel.calcularBonus(percentualMetaAlcancada);
 
         System.out.printf("DEBUG: Bônus pago no valor de R$%.2f", valor);
+
     }
 }

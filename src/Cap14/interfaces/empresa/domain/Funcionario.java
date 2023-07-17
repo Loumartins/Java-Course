@@ -2,7 +2,7 @@ package Cap14.interfaces.empresa.domain;
 
 public class Funcionario extends EmpresaFinanciavel {
 
-    public static final int QUANTIDADE_SALARIOS_LIMITE = 5;
+    public static final int QUANTIDADE_SALARIOS_LIMITE_CREDITO = 5;
     private double salarioMensal;
 
     public Funcionario(String nome, double salarioMensal) {
@@ -20,7 +20,7 @@ public class Funcionario extends EmpresaFinanciavel {
 
     @Override
     public double calcularLimiteAprovado() {
-        return getSalarioMensal() * QUANTIDADE_SALARIOS_LIMITE;
+        return getSalarioMensal() * QUANTIDADE_SALARIOS_LIMITE_CREDITO;
     }
 }
 

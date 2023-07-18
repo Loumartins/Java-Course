@@ -3,6 +3,8 @@ package Cap14.interfaces.seguro.dominio;
 import Cap14.interfaces.seguro.interfaces.BemSeguravel;
 
 public class ImovelResidencial implements BemSeguravel {
+    public static final double TAXA_VALOR_MERCADO = 0.01;
+    public static final double TAXA_AREA_CONSTRUIDA = 0.30;
     private double valorMercado;
     private int areaConstruida;
 
@@ -13,6 +15,7 @@ public class ImovelResidencial implements BemSeguravel {
 
     public double getValorMercado() {
         return valorMercado;
+
     }
 
     public void setValorMercado(double valorMercado) {
@@ -20,6 +23,7 @@ public class ImovelResidencial implements BemSeguravel {
     }
 
     public int getAreaConstruida() {
+
         return areaConstruida;
     }
 
@@ -29,7 +33,8 @@ public class ImovelResidencial implements BemSeguravel {
 
     @Override
     public double calcularValorPremio() {
-        return 0;
+        double calculoValorPremio = (getValorMercado() * TAXA_VALOR_MERCADO) + (TAXA_AREA_CONSTRUIDA * getAreaConstruida());
+        return calculoValorPremio;
     }
 
     @Override

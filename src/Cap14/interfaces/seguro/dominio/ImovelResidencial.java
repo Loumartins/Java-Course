@@ -3,7 +3,7 @@ package Cap14.interfaces.seguro.dominio;
 import Cap14.interfaces.seguro.interfaces.BemSeguravel;
 
 public class ImovelResidencial implements BemSeguravel {
-    public static final double TAXA_VALOR_MERCADO = 0.01;
+    public static final double TAXA_VALOR_MERCADO = 0.001;
     public static final double TAXA_AREA_CONSTRUIDA = 0.30;
     private double valorMercado;
     private int areaConstruida;
@@ -39,6 +39,6 @@ public class ImovelResidencial implements BemSeguravel {
 
     @Override
     public String descrever() {
-        return null;
+        return String.format("Imovel residencial com %dm2 de área construida, avaliado em %.2f%n", getAreaConstruida(), getValorMercado());
     }
 }

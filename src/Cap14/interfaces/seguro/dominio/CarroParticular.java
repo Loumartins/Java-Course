@@ -9,7 +9,12 @@ public class CarroParticular extends VeiculoAutomotor {
 
     @Override
     public double calcularValorPremio() {
-        return 0;
+        double calculoValorPremio = getValorMercado() * 0.04;
+        if (getAnoFabricacao() < 2000){
+            calculoValorPremio+= calculoValorPremio * 0.05;
+            return calculoValorPremio;
+        }
+        return calculoValorPremio;
     }
 
     @Override

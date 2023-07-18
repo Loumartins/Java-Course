@@ -19,6 +19,6 @@ public class CarroParticular extends VeiculoAutomotor {
 
     @Override
     public String descrever() {
-        return null;
+        return String.format("Carro particular do ano %d e avaliado em %.2f", getAnoFabricacao(), getValorMercado());
     }
 }

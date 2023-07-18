@@ -19,7 +19,8 @@ public class Caminhao extends VeiculoAutomotor{
 
     @Override
     public double calcularValorPremio() {
-        return 0;
+        double calculoValorPremio = (getValorMercado() * 0.02) + (50 * getQuantidadeEixos());
+        return calculoValorPremio;
     }
 
     @Override

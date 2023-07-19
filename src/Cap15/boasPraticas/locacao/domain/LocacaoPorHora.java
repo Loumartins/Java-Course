@@ -1,8 +1,8 @@
 package Cap15.boasPraticas.locacao.domain;
 
-public class LocacaoPorDia extends Locacao{
+public class LocacaoPorHora extends Locacao{
 
-    public LocacaoPorDia(Notebook notebook) {
+    public LocacaoPorHora(Notebook notebook) {
         super(notebook);
     }
 

@@ -1,15 +1,25 @@
 package Cap15.boasPraticas.locacao.domain;
 
-public abstract class Locacao {
+public class Locacao {
     private Notebook notebook;
+    private Precificacao precificacao;
 
-    public Locacao(Notebook notebook) {
+    public Locacao(Notebook notebook, Precificacao precificacao) {
         this.notebook = notebook;
+        this.precificacao = precificacao;
     }
 
     public Notebook getNotebook() {
         return notebook;
     }
 
-    public abstract double calcularValorDevido(int horasUtilizadas);
+    public Precificacao getPrecificacao() {
+        return precificacao;
+    }
+
+    public double calcularValorDevido(int horasUtilizadas){
+        double valorTotal = getPrecificacao().calcularValorTotal(getNotebook(), horasUtilizadas);
+
+        return valorTotal;
+    }
 }

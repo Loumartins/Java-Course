@@ -8,6 +8,6 @@ public class LocacaoPorHora extends Locacao{
 
     @Override
     public double calcularValorDevido(int horasUtilizadas) {
-        return getNotebook().getPrecoDia() * horasUtilizadas;
+        return getNotebook().getPrecoHora() * horasUtilizadas;
     }
 }

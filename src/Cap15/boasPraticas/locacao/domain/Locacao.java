@@ -23,8 +23,22 @@ public class Locacao {
         return precificacao;
     }
 
+    public Seguro getSeguro() {
+        return seguro;
+    }
+
+    public boolean temSeguro(){
+        return getSeguro() != null;
+    }
+
     public double calcularValorDevido(int horasUtilizadas){
         double valorTotal = getPrecificacao().calcularValorTotal(getNotebook(), horasUtilizadas);
+
+        if (temSeguro()){
+            valorTotal+= getSeguro().calcularPremio(horasUtilizadas, valorTotal);
+
+        }
+
 
         return valorTotal;
     }

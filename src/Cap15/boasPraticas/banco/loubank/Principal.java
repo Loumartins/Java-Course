@@ -1,5 +1,8 @@
 package Cap15.boasPraticas.banco.loubank;
 
+import Cap15.boasPraticas.banco.javabank.Conta;
+import Cap15.boasPraticas.banco.javabank.ContaCorrente;
+
 public class Principal {
     public static void main(String[] args) {
         Conta conta1 = new ContaCorrente();

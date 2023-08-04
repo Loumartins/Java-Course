@@ -8,4 +8,6 @@ public interface Conta {
     void depositar(double valor);
 
     void transferir (Conta conta, double valor);
+
+    void aplicarEmInvestimento(double valor);
 }

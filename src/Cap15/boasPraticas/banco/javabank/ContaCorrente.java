@@ -23,4 +23,10 @@ public class ContaCorrente implements Conta{
         this.saldo-= valor;
         conta.depositar(valor);
     }
+
+    @Override
+    public void aplicarEmInvestimento(double valor) {
+        this.saldo -= valor;
+        //TODO implementar as regras de negocios para aplicacao de um valor em um investimento
+    }
 }

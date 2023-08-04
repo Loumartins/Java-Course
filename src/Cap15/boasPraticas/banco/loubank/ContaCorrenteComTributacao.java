@@ -13,9 +13,9 @@ public class ContaCorrenteComTributacao extends ContaCorrente {
         super.sacar(valor * TAXA_IMPOSTO_MOVIMENTACAO);
     }
 
-    @Override
-    public void transferir(Conta conta, double valor) {
-        super.transferir(conta, valor);
-        super.sacar(valor * TAXA_IMPOSTO_MOVIMENTACAO);
-    }
+//    @Override
+//    public void transferir(Conta conta, double valor) {
+//        super.transferir(conta, valor);
+//        super.sacar(valor * TAXA_IMPOSTO_MOVIMENTACAO);
+//    }
 }

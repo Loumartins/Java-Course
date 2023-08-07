@@ -2,11 +2,14 @@ package Cap15.boasPraticas.banco.loubank;
 
 import Cap15.boasPraticas.banco.javabank.Conta;
 
+import java.util.Objects;
+
 public abstract class ContaBaseDecorator implements Conta {
 
     private Conta contaOriginal;
 
     public ContaBaseDecorator(Conta contaOriginal) {
+        Objects.requireNonNull(contaOriginal);
         this.contaOriginal = contaOriginal;
     }
 

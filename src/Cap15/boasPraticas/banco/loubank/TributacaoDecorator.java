@@ -4,45 +4,34 @@ import Cap15.boasPraticas.banco.javabank.Conta;
 
 import java.util.Objects;
 
-public class TributacaoDecorator implements Conta {
+public class TributacaoDecorator extends ContaBaseDecorator {
 
     public static final double TAXA_IMPOSTO_MOVIMENTACAO = 0.1;
-    private Conta contaOriginal;
 
     public TributacaoDecorator(Conta contaOriginal) {
-        Objects.requireNonNull(contaOriginal);
-        this.contaOriginal = contaOriginal;
-    }
+        super(contaOriginal);
 
-
-    @Override
-    public double getSaldo() {
-        return contaOriginal.getSaldo();
     }
 
     @Override
     public void sacar(double valor) {
-        contaOriginal.sacar(valor);
+        getContaOriginal().sacar(valor);
         debitarImpostoMovimentacao(valor);
     }
 
     @Override
     public void depositar(double valor) {
-        contaOriginal.depositar(valor);
+        getContaOriginal().depositar(valor);
     }
 
     @Override
     public void transferir(Conta conta, double valor) {
-        contaOriginal.transferir(conta, valor);
+        getContaOriginal().transferir(conta, valor);
         debitarImpostoMovimentacao(valor);
     }
 
-    @Override
-    public void aplicarEmInvestimento(double valor) {
-        contaOriginal.aplicarEmInvestimento(valor);
-    }
 
     private void debitarImpostoMovimentacao(double valor) {
-        contaOriginal.sacar(valor * TAXA_IMPOSTO_MOVIMENTACAO);
+        getContaOriginal().sacar(valor * TAXA_IMPOSTO_MOVIMENTACAO);
     }
 }

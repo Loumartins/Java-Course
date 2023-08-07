@@ -11,4 +11,7 @@ public interface Conta {
 
     void aplicarEmInvestimento(double valor);
 
+    default void imprimirSaldo(){
+        System.out.printf("Seu saldo é de R$: %.2f%n", getSaldo());
+    }
 }

@@ -9,6 +9,7 @@ public class Principal {
 
         conta1.depositar(1000);
         conta1.sacar(100);
+        conta1.imprimirSaldo();
 
         System.out.printf("Saldo da conta 1: R$%.2f%n", conta1.getSaldo() );
 //        System.out.printf("Saldo da conta 2: R$%.2f%n", conta2.getSaldo() );

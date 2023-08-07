@@ -37,4 +37,10 @@ public class AuditoriaDecorator extends ContaBaseDecorator{
         quantidadeDeOperacoes++;
         super.aplicarEmInvestimento(valor);
     }
+
+    @Override
+    public void imprimirSaldo() {
+        quantidadeDeOperacoes++;
+        super.imprimirSaldo();
+    }
 }

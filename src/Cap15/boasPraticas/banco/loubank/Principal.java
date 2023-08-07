@@ -5,8 +5,8 @@ import Cap15.boasPraticas.banco.javabank.ContaCorrente;
 
 public class Principal {
     public static void main(String[] args) {
-        PontuacaoDecorator potntuacao = new PontuacaoDecorator(new ContaCorrente());
-        Conta conta1 = new TributacaoDecorator(potntuacao);
+        PontuacaoDecorator pontuacao = new PontuacaoDecorator(new ContaCorrente());
+        Conta conta1 = new TributacaoDecorator(pontuacao);
         Conta conta2 = new ContaCorrente();
 
         conta1.depositar(1000);
@@ -15,5 +15,6 @@ public class Principal {
 
         System.out.printf("Saldo da conta 1: R$%.2f%n", conta1.getSaldo() );
         System.out.printf("Saldo da conta 2: R$%.2f%n", conta2.getSaldo() );
+        System.out.printf("Pontos da conta 1: %d%n", pontuacao.getPontos());
     }
 }

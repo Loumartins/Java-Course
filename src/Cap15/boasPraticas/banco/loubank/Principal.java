@@ -5,7 +5,8 @@ import Cap15.boasPraticas.banco.javabank.ContaCorrente;
 
 public class Principal {
     public static void main(String[] args) {
-        Conta conta1 = new TributacaoDecorator(new ContaCorrente());
+        PontuacaoDecorator potntuacao = new PontuacaoDecorator(new ContaCorrente());
+        Conta conta1 = new TributacaoDecorator(potntuacao);
         Conta conta2 = new ContaCorrente();
 
         conta1.depositar(1000);

@@ -24,6 +24,7 @@ public class PontuacaoDecorator implements Conta {
     @Override
     public void depositar(double valor) {
         contaOriginal.depositar(valor);
+        pontos += valor / 100;
     }
 
     @Override

@@ -2,12 +2,15 @@ package Cap15.boasPraticas.banco.loubank;
 
 import Cap15.boasPraticas.banco.javabank.Conta;
 
+import java.util.Objects;
+
 public class ContaComTributacao implements Conta {
 
     public static final double TAXA_IMPOSTO_MOVIMENTACAO = 0.1;
     private Conta contaOriginal;
 
     public ContaComTributacao(Conta contaOriginal) {
+        Objects.requireNonNull(contaOriginal);
         this.contaOriginal = contaOriginal;
     }
 
@@ -31,6 +34,7 @@ public class ContaComTributacao implements Conta {
     @Override
     public void transferir(Conta conta, double valor) {
         contaOriginal.transferir(conta, valor);
+        debitarImpostoMovimentacao(valor);
     }
 
     @Override

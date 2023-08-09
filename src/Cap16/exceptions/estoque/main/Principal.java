@@ -10,7 +10,6 @@ public class Principal {
 
         produto.retirarEstoque(5);
 
-        produto.isInativo();
 
         System.out.printf("Estoque: %d%n", produto.getQuantidadeEstoque());
 

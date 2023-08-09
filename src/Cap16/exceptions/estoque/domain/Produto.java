@@ -48,6 +48,11 @@ public class Produto {
         if (isInativo()) {
             throw new IllegalStateException("O produto necessita estar ativo para que possar ter uma retirada no estoque");
         }
+
+        if (this.quantidadeEstoque - quantidade < 0){
+            throw new IllegalArgumentException("Quantidade inválida, porque estoque ficaria negativo");
+        }
+
         this.quantidadeEstoque-=quantidade;
     }
     public void adicionarEstoque(int quantidade){

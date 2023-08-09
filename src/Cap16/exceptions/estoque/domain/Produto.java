@@ -1,5 +1,7 @@
 package Cap16.exceptions.estoque.domain;
 
+import java.util.Objects;
+
 public class Produto {
 
     private String nome;
@@ -7,6 +9,7 @@ public class Produto {
     private boolean ativo;
 
     public Produto(String nome) {
+        Objects.requireNonNull(nome, "O nome precisa ser informado");
         this.nome = nome;
     }
 

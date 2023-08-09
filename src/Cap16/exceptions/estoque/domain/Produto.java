@@ -34,6 +34,9 @@ public class Produto {
     }
 
     public void retirarEstoque(int quantidade){
+        if (quantidade < 0){
+            throw new IllegalArgumentException("Quantidade deve ser maior que 0");
+        }
         this.quantidadeEstoque-=quantidade;
     }
     public void adicionarEstoque(int quantidade){

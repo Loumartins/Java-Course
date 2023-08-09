@@ -30,7 +30,7 @@ public class Produto {
         return ativo;
     }
     public boolean isInativo(){
-        return !ativo;
+        return !isAtivo();
     }
 
     public void ativar(){
@@ -46,7 +46,7 @@ public class Produto {
         }
 
         if (isInativo()) {
-            throw new RuntimeException("O produto necessita estar ativo para que possar ter uma retirada no estoque");
+            throw new IllegalStateException("O produto necessita estar ativo para que possar ter uma retirada no estoque");
         }
         this.quantidadeEstoque-=quantidade;
     }

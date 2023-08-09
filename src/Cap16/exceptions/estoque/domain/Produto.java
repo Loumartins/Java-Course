@@ -26,6 +26,13 @@ public class Produto {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
+    public boolean isAtivo(){
+        return ativo;
+    }
+    public boolean isInativo(){
+        return !ativo;
+    }
+
     public void ativar(){
         this.ativo = true;
     }
@@ -36,6 +43,10 @@ public class Produto {
     public void retirarEstoque(int quantidade){
         if (quantidade < 0){
             throw new IllegalArgumentException("Quantidade deve ser maior que 0");
+        }
+
+        if (isInativo()) {
+            throw new RuntimeException("O produto necessita estar ativo para que possar ter uma retirada no estoque");
         }
         this.quantidadeEstoque-=quantidade;
     }

@@ -11,10 +11,6 @@ public class Principal {
         produto.adicionarEstoque(20);
         produto.ativar();
         comprar(produto);
-        //produto.retirarEstoque(5);
-
-
-//        System.out.printf("Estoque: %d%n", produto.getQuantidadeEstoque());
 
     }
     private static void comprar(Produto produto){
@@ -27,7 +23,12 @@ public class Principal {
     }
 
     private static void efetuarBaixaEstoque(Produto produto, int quantidade){
-        produto.retirarEstoque(quantidade);
-        System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n", quantidade, produto.getQuantidadeEstoque());
+        try{
+            produto.retirarEstoque(quantidade);
+            System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n",
+                    quantidade, produto.getQuantidadeEstoque());
+        }catch (IllegalArgumentException iae){
+            System.out.println("Erro ao efetuar baixa no estoque: " + iae.getMessage());
+        }
     }
 }

@@ -29,6 +29,7 @@ public class Principal {
                     quantidade, produto.getQuantidadeEstoque());
         }catch (IllegalArgumentException iae){
             System.out.println("Erro ao efetuar baixa no estoque: " + iae.getMessage());
+            throw iae;
         }
     }
 }

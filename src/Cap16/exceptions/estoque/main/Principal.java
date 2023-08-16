@@ -15,11 +15,19 @@ public class Principal {
     }
     private static void comprar(Produto produto){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Quantidade: ");
-        int quantidade = sc.nextInt();
+        do{
+            try{
+                System.out.println("Quantidade: ");
+                int quantidade = sc.nextInt();
 
-        efetuarBaixaEstoque(produto, quantidade);
-        System.out.println("Compra realizada com sucesso");
+                efetuarBaixaEstoque(produto, quantidade);
+                System.out.println("Compra realizada com sucesso");
+                break;
+            } catch (IllegalArgumentException iae){
+                System.out.println("Erro");
+            }
+
+        } while (true);
     }
 
     private static void efetuarBaixaEstoque(Produto produto, int quantidade){

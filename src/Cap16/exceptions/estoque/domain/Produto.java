@@ -49,7 +49,8 @@ public class Produto {
         }
 
         if (isInativo()) {
-            throw new IllegalStateException("O produto necessita estar ativo para que possar ter uma retirada no estoque");
+            throw new ProdutoInativoException("O produto necessita estar ativo para que possar ter uma retirada no estoque");
+          // throw new IllegalStateException("O produto necessita estar ativo para que possar ter uma retirada no estoque");
         }
 
         if (this.quantidadeEstoque - quantidade < 0){

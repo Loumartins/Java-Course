@@ -1,6 +1,7 @@
 package Cap16.exceptions.estoque.main;
 
 import Cap16.exceptions.estoque.domain.Produto;
+import Cap16.exceptions.estoque.domain.ProdutoInativoException;
 
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class Principal {
         Produto produto = new Produto("Apple Watch");
 
         produto.adicionarEstoque(20);
-        produto.ativar();
+        //produto.ativar();
         comprar(produto);
 
     }
@@ -25,8 +26,8 @@ public class Principal {
                 break;
             } catch (IllegalArgumentException iae){
                 System.out.println("Erro");
-            } catch (IllegalStateException ise){
-                System.out.println("Erro na compra: " + ise.getMessage());
+            } catch (ProdutoInativoException pie){
+                System.out.println("Erro na compra: " + pie.getMessage());
                 System.out.print("Deseja ativar o produto?");
                 if (sc.nextBoolean()){
                     produto.ativar();

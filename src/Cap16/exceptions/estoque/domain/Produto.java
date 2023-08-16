@@ -54,7 +54,8 @@ public class Produto {
         }
 
         if (this.quantidadeEstoque - quantidade < 0){
-            throw new IllegalArgumentException("Quantidade inválida, porque estoque ficaria negativo");
+            throw new ProdutoSemEstoqueException("Quantidade inválida, porque estoque ficaria negativo");
+           // throw new IllegalArgumentException("Quantidade inválida, porque estoque ficaria negativo");
         }
 
         this.quantidadeEstoque-=quantidade;

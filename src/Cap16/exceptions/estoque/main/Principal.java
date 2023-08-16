@@ -25,6 +25,16 @@ public class Principal {
                 break;
             } catch (IllegalArgumentException iae){
                 System.out.println("Erro");
+            } catch (IllegalStateException ise){
+                System.out.println("Erro na compra: " + ise.getMessage());
+                System.out.print("Deseja ativar o produto?");
+                if (sc.nextBoolean()){
+                    produto.ativar();
+                }else {
+                    System.out.println("Compra não pode ser realizada");
+                    break;
+                }
+
             }
 
         } while (true);

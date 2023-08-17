@@ -1,6 +1,6 @@
 package Cap16.exceptions.estoque.domain;
 
-public class ProdutoSemEstoqueException extends RuntimeException {
+public class ProdutoSemEstoqueException extends Exception {
 
     private final int estoqueDisponivel;
 

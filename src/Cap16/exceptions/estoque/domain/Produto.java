@@ -43,7 +43,7 @@ public class Produto {
         this.ativo = false;
     }
 
-    public void retirarEstoque(int quantidade) throws ProdutoSemEstoqueException{
+    public void retirarEstoque(int quantidade) throws ProdutoSemEstoqueException, ProdutoInativoException {
         if (quantidade < 0){
             throw new IllegalArgumentException("Quantidade deve ser maior que 0");
         }

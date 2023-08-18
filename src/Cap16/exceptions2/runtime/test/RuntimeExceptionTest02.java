@@ -7,6 +7,10 @@ public class RuntimeExceptionTest02 {
 
     }
     public static int divisao(int a, int b){
-        return a/b;
+        if (b == 0){
+            throw new ArithmeticException("Argumento ilegal, náo pode ser 0");
+        }
+            return a/b;
+
     }
 }

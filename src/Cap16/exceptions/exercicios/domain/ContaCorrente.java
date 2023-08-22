@@ -1,5 +1,7 @@
 package Cap16.exceptions.exercicios.domain;
 
+import java.util.Objects;
+
 public class ContaCorrente {
     private String numero;
     private double saldo;
@@ -59,6 +61,7 @@ public class ContaCorrente {
     }
 
     public void transferir(ContaCorrente contaDestino, double valor) {
+        Objects.requireNonNull(contaDestino, "Conta destino não pode ser nulo");
         if (contaDestino.isInativo()) {
            throw new ContaInativaException("Conta de destino está inativa");
         }

@@ -41,6 +41,33 @@ public class ContaCorrente {
         this.saldo-= valor;
         return true;
     }
+    public  boolean depositar(double valor) {
+        if (valor <= 0) {
+            System.out.println("Valor de depósito deve ser maior que 0");
+            return false;
+        }
 
+        if (isInativo()) {
+            System.out.println("Conta inativa");
+            return false;
+        }
+
+        this.saldo += valor;
+        return true;
+    }
+
+    public boolean transferir(ContaCorrente contaDestino, double valor) {
+        if (contaDestino.isInativo()) {
+            System.out.println("Conta de destino está inativa");
+            return false;
+        }
+
+        if (sacar(valor)) {
+            contaDestino.depositar(valor);
+            return true;
+        }
+
+        return false;
+    }
 
 }

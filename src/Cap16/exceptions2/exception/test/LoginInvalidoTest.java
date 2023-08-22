@@ -23,5 +23,6 @@ public class LoginInvalidoTest {
         if (!usernameDB.equals(usernameUsuario) || !senhaDB.equals(senhaUsuario)){
             throw new LoginInvalidoException("Usuário ou senha inválidos");
         }
+        System.out.println("Inicializando login");
      }
 }

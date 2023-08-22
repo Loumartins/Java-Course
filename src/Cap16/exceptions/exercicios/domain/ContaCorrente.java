@@ -25,49 +25,38 @@ public class ContaCorrente {
         return !isAtiva();
     }
 
-    public boolean sacar(double valor){
+    public void sacar(double valor){
         if (valor <= 0){
-            System.out.println("Valor do saque deve ser maior que 0");
-            return false;
+            throw new IllegalArgumentException("O valor de saque deve ser maior que 0");
+
         }
         if (valor > this.saldo){
-            System.out.println("Conta sem saldo");
-            return false;
+            throw new ContaSemSaldoException("É necessário que a conta " +
+                    "tenha saldo para efetuar o saque");
+
         }
         if (isInativo()){
-            System.out.println("Conta inativa");
-            return false;
+            throw new ContaInativaException("Conta inativa");
         }
         this.saldo-= valor;
-        return true;
     }
-    public  boolean depositar(double valor) {
+    public void depositar(double valor) {
         if (valor <= 0) {
-            System.out.println("Valor de depósito deve ser maior que 0");
-            return false;
+           throw new IllegalArgumentException("Valor de depósito deve ser maior que 0");
         }
 
         if (isInativo()) {
-            System.out.println("Conta inativa");
-            return false;
+            throw new ContaInativaException("Conta inativa");
         }
 
         this.saldo += valor;
-        return true;
     }
 
-    public boolean transferir(ContaCorrente contaDestino, double valor) {
+    public void transferir(ContaCorrente contaDestino, double valor) {
         if (contaDestino.isInativo()) {
-            System.out.println("Conta de destino está inativa");
-            return false;
+           throw new ContaInativaException("Conta de destino está inativa");
         }
-
-        if (sacar(valor)) {
-            contaDestino.depositar(valor);
-            return true;
-        }
-
-        return false;
+        contaDestino.depositar(valor);
     }
 
 }

@@ -25,5 +25,22 @@ public class ContaCorrente {
         return !isAtiva();
     }
 
+    public boolean sacar(double valor){
+        if (valor <= 0){
+            System.out.println("Valor do saque deve ser maior que 0");
+            return false;
+        }
+        if (valor > this.saldo){
+            System.out.println("Conta sem saldo");
+            return false;
+        }
+        if (isInativo()){
+            System.out.println("Conta inativa");
+            return false;
+        }
+        this.saldo-= valor;
+        return true;
+    }
+
 
 }

@@ -56,6 +56,7 @@ public class ContaCorrente {
         if (contaDestino.isInativo()) {
            throw new ContaInativaException("Conta de destino está inativa");
         }
+        sacar(valor);
         contaDestino.depositar(valor);
     }
 

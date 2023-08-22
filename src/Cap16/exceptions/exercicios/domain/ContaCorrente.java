@@ -17,6 +17,12 @@ public class ContaCorrente {
         return saldo;
     }
 
+    public void ativar(){
+        this.ativa = true;
+    }
+    public void inativar(){
+        this.ativa = false;
+    }
     public boolean isAtiva() {
         return ativa;
     }
@@ -24,7 +30,6 @@ public class ContaCorrente {
     public boolean isInativo(){
         return !isAtiva();
     }
-
     public void sacar(double valor){
         if (valor <= 0){
             throw new IllegalArgumentException("O valor de saque deve ser maior que 0");
@@ -40,6 +45,7 @@ public class ContaCorrente {
         }
         this.saldo-= valor;
     }
+
     public void depositar(double valor) {
         if (valor <= 0) {
            throw new IllegalArgumentException("Valor de depósito deve ser maior que 0");
@@ -59,5 +65,4 @@ public class ContaCorrente {
         sacar(valor);
         contaDestino.depositar(valor);
     }
-
 }

@@ -25,4 +25,12 @@ public class Cliente {
     public void setFaturamentoMensal(double faturamentoMensal) {
         this.faturamentoMensal = faturamentoMensal;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "razaoSocial='" + razaoSocial + '\'' +
+                ", faturamentoMensal=" + faturamentoMensal +
+                '}';
+    }
 }

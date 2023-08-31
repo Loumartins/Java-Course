@@ -1,10 +1,10 @@
 package Cap17.generics.domain;
 
 public class Pesquisador {
-    public static Funcionario obterNome (Funcionario[] funcionarios, String nome){
-        for (Funcionario funcionario : funcionarios) {
-            if (funcionario.getNome().equals(nome)){
-                return funcionario;
+    public static <T extends Nomeavel> T obterNome (T[] itens, String nome){
+        for (  T item : itens) {
+            if (item.getNome().equals(nome)){
+                return item;
             }
         }
         throw new RuntimeException("Funcionário não encontrado");

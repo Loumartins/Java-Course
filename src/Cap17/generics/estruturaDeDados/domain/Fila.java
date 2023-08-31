@@ -2,10 +2,10 @@ package Cap17.generics.estruturaDeDados.domain;
 
 import java.util.Arrays;
 
-public class Pilha <T>  {
+public class Fila<T> {
     private T[] itens;
 
-    public Pilha(){
+    public Fila() {
         itens = (T[]) new Object[0];
     }
 
@@ -15,11 +15,11 @@ public class Pilha <T>  {
     }
 
     public T retirar(){
-        if (itens.length == 0){
-            throw new ColecaoVaziaException("Pilha sem itens");
+        if (itens.length==0){
+            throw new ColecaoVaziaException("Fila sem itens");
         }
-        T item = itens[itens.length - 1];
-        itens = Arrays.copyOf(itens, itens.length-1);
+        T item = itens[0];
+        itens = Arrays.copyOfRange(itens, 1, itens.length);
 
         return item;
     }

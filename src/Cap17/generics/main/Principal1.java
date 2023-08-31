@@ -21,6 +21,9 @@ public class Principal1 {
         Funcionario funcionarioEncontrado = Pesquisador.obterNome(funcionarios, "Maria");
         System.out.println(funcionarioEncontrado);
 
+        Cliente clienteEncontrado = Pesquisador.obterNome(cliente, "Supermercado Pague e Leve");
+        System.out.println(clienteEncontrado);
+
 
     }
 }

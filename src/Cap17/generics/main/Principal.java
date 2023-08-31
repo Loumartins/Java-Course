@@ -13,9 +13,8 @@ public class Principal {
 
         double totalFaturamento = 0d;
 
-        for (Cliente cliente : clientes){
-
-            totalFaturamento += cliente.getFaturamentoMensal();
+        for (Cliente cliente : clientes) {
+            totalFaturamento +=cliente.getFaturamentoMensal();
         }
         System.out.println(totalFaturamento);
     }

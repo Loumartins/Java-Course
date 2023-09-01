@@ -2,7 +2,7 @@ package Cap17.generics.estruturaDeDados.domain;
 
 import java.util.Arrays;
 
-public class Pilha <T>  {
+public class Pilha <T> implements Colecao<T>  {
     private T[] itens;
 
     public Pilha(){

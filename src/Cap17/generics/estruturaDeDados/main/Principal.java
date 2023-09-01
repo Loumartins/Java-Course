@@ -1,33 +1,39 @@
 package Cap17.generics.estruturaDeDados.main;
 
 import Cap17.generics.estruturaDeDados.domain.Colecao;
+import Cap17.generics.estruturaDeDados.domain.Fila;
 import Cap17.generics.estruturaDeDados.domain.Pilha;
 import Cap17.generics.estruturaDeDados.domain.ColecaoVaziaException;
 import Cap17.generics.estruturaDeDados.domain.loja.Produto;
 
 public class Principal {
     public static void main(String[] args) {
-        Colecao <Produto> pilha = new Pilha<>();
-//        pilha.colocar("A");
-//        pilha.colocar("B");
-        pilha.colocar(new Produto("Feijao"));
-        pilha.colocar(new Produto("Arroz"));
-        pilha.colocar(new Produto("Agua de coco"));
+        Colecao <Produto> produtos = new Fila<>();
 
-        retirarTodos(pilha);
+        produtos.colocar(new Produto("Feijao"));
+        produtos.colocar(new Produto("Arroz"));
+        produtos.colocar(new Produto("Agua de coco"));
+
+        retirarTodos(produtos);
+
+        Colecao<String> nomes = new Pilha<>();
+        nomes.colocar("jose");
+        nomes.colocar("maria");
+
+        retirarTodos(nomes);
 
     }
 
-    private static void retirarTodos (Colecao<Produto> produtos){
+    private static void retirarTodos (Colecao<?> objetos){
         try{
             int i = 1;
             while (true){
-                Produto produto = produtos.retirar();
-                System.out.printf("%d. %s%n", i, produto.getDescricao());
+                Object object = objetos.retirar();
+                System.out.printf("%d. %s%n", i, object.toString());
                 i++;
             }
         } catch (ColecaoVaziaException e ){
-            System.out.println("Coleção de produtos esgotada");
+            System.out.println("Coleção de objetos esgotada");
         }
     }
 }

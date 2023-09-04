@@ -4,6 +4,11 @@ public class Carro implements Estocavel{
     private String modelo;
     private int quantidadeEstoque;
 
+    public Carro(String modelo, int quantidadeEstoque) {
+        this.modelo = modelo;
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
     public String getModelo() {
         return modelo;
     }

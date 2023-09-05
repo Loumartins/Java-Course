@@ -3,6 +3,7 @@ package Cap18.Collections.hotelaria.domain;
 import Cap18.Collections.hotelaria.domain.exceptions.HotelJaExistenteException;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class CadastroHotel {
@@ -19,6 +20,16 @@ public class CadastroHotel {
 
     public ArrayList<Hotel> obterTodos(){
         return hoteis;
+    }
+
+    public void removerPorCidade(String cidade){
+        Iterator<Hotel> hotelIterator = hoteis.iterator();
+        while (hotelIterator.hasNext()){
+            Hotel hotel = hotelIterator.next();
+            if (hotel.getCidade().equals(cidade)){
+                hotelIterator.remove();
+            }
+        }
     }
 
 }

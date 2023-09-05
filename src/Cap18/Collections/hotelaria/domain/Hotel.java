@@ -1,5 +1,7 @@
 package Cap18.Collections.hotelaria.domain;
 
+import java.util.Objects;
+
 public class Hotel {
     private String nome;
     private String cidade;
@@ -46,5 +48,18 @@ public class Hotel {
                 ", cidade='" + cidade + '\'' +
                 ", precoDiaria=" + precoDiaria +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hotel hotel = (Hotel) o;
+        return nome.equals(hotel.nome) && cidade.equals(hotel.cidade);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, cidade);
     }
 }

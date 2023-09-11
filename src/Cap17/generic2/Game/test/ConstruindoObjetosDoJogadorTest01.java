@@ -5,12 +5,11 @@ import Cap17.generic2.Game.domain.Helmet;
 
 public class ConstruindoObjetosDoJogadorTest01 {
     public static void main(String[] args) {
-        Helmet helmet01 = new Helmet();
-        ConstruindoObjetosDoJogador<Helmet> helmet = new ConstruindoObjetosDoJogador<>(helmet01);
+        ConstruindoObjetosDoJogador<Helmet> helmet = new ConstruindoObjetosDoJogador<>(new Helmet("Gold helmet"));
 
-       helmet01.setNome("Gold helmet");
+        String nome = helmet.print();
 
-
+        System.out.println(nome);
 
     }
 }

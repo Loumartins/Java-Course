@@ -11,4 +11,10 @@ public class ConstruindoObjetosDoJogador <T extends PlayerObject>  {
     public T getObject() {
         return object;
     }
+
+
+    public String print(){
+       return object.getNome();
+    }
+
 }

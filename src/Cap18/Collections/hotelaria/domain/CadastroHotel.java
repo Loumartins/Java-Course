@@ -1,6 +1,7 @@
 package Cap18.Collections.hotelaria.domain;
 
 import Cap18.Collections.hotelaria.domain.exceptions.HotelJaExistenteException;
+import Cap18.Collections.hotelaria.domain.exceptions.HotelNaoEncontradoException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,6 +19,7 @@ public class CadastroHotel {
         hoteis.add(hotel);
     }
 
+
     public ArrayList<Hotel> obterTodos(){
         return hoteis;
     }
@@ -31,5 +33,14 @@ public class CadastroHotel {
             }
         }
     }
+
+    public void remover(Hotel hotel){
+       boolean removido = hoteis.remove(hotel);
+
+       if (!removido){
+           throw new HotelNaoEncontradoException("Hotel não pode ser removido porque nao foi encontrado");
+       }
+    }
+
 
 }

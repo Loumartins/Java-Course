@@ -2,7 +2,7 @@ package Cap18.Collections.ArrayList.domain.hotelaria.domain;
 
 import java.util.Objects;
 
-public class Hotel {
+public class Hotel implements Comparable<Hotel> {
     private String nome;
     private String cidade;
     private double precoDiaria;
@@ -61,5 +61,15 @@ public class Hotel {
     @Override
     public int hashCode() {
         return Objects.hash(nome, cidade);
+    }
+
+    @Override
+    public int compareTo(Hotel o) {
+        if (this.precoDiaria < o.precoDiaria){
+            return -1;
+        } else if (this.precoDiaria > o.precoDiaria){
+            return 1;
+        }
+        return 0;
     }
 }

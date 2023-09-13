@@ -47,7 +47,7 @@ public class HotelariaTest01 {
 //        Hotel[] hotels = cadastroHotel.arrayHoteis();
 //        System.out.println(Arrays.toString(hotels));
 
-          cadastroHotel.ordenarPorPreco();
+          cadastroHotel.ordenarPorNome();
 
           imprimirHoteis(hoteis);
 

@@ -20,7 +20,7 @@ public class CadastroHotel {
         hoteis.add(hotel);
     }
 
-    public void ordenarPorPreco(){
+    public void ordenarPorNome(){
         Collections.sort(hoteis);
     }
 

@@ -5,10 +5,11 @@ import Cap18.Collections.ArrayList.domain.hotelaria.domain.exceptions.HotelNaoEn
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class CadastroHotel {
 
-    private final ArrayList<Hotel> hoteis = new ArrayList<>();
+    private final List<Hotel> hoteis = new ArrayList<>();
 
     public void adicionarHotel(String nome, String cidade, double precoDiaria){
         Hotel hotel = new Hotel(nome, cidade,precoDiaria);
@@ -19,7 +20,7 @@ public class CadastroHotel {
     }
 
 
-    public ArrayList<Hotel> obterTodos(){
+    public List<Hotel> obterTodos(){
         return hoteis;
     }
 

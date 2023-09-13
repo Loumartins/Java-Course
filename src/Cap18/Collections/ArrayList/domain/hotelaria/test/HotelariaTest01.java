@@ -4,6 +4,7 @@ import Cap18.Collections.ArrayList.domain.hotelaria.domain.CadastroHotel;
 import Cap18.Collections.ArrayList.domain.hotelaria.domain.Hotel;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ListIterator;
 
 public class HotelariaTest01 {
@@ -21,7 +22,7 @@ public class HotelariaTest01 {
 
         //System.out.println("-----------");
 
-          ArrayList<Hotel> hoteis = cadastroHotel.obterTodos();
+          List<Hotel> hoteis = cadastroHotel.obterTodos();
 
         //cadastroHotel.adicionarHotel("Jaguaribe Lodge", "Fortim/CE", 1300);
 
@@ -44,14 +45,14 @@ public class HotelariaTest01 {
 
         }
 
-        private static void imprimirHoteis(ArrayList<Hotel> hotels){
+        private static void imprimirHoteis(List<Hotel> hotels){
             for (Hotel hotel : hotels) {
                 System.out.println(hotel);
             }
         }
 
 
-        private static void imprimirHoteisDeTrazPraFrente(ArrayList<Hotel> hoteis){
+        private static void imprimirHoteisDeTrazPraFrente(List<Hotel> hoteis){
             ListIterator<Hotel> hotelListIterator = hoteis.listIterator(hoteis.size());
             while (hotelListIterator.hasPrevious()){
                 System.out.println(hotelListIterator.previous());

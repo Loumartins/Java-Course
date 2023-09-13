@@ -33,7 +33,7 @@ public class HotelariaTest01 {
 
        // imprimirHoteis(hoteis);
 
-        cadastroHotel.removerPorCidade("Macae/RJ");
+//        cadastroHotel.removerPorCidade("Macae/RJ");
 
 //        System.out.println("---------");
 //
@@ -44,8 +44,13 @@ public class HotelariaTest01 {
 //        imprimirHoteisDeTrazPraFrente(hoteis);
 
 
-        Hotel[] hotels = cadastroHotel.arrayHoteis();
-        System.out.println(Arrays.toString(hotels));
+//        Hotel[] hotels = cadastroHotel.arrayHoteis();
+//        System.out.println(Arrays.toString(hotels));
+
+          cadastroHotel.ordenarPorPreco();
+
+          imprimirHoteis(hoteis);
+
         }
 
         private static void imprimirHoteis(List<Hotel> hotels){

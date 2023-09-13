@@ -65,11 +65,13 @@ public class Hotel implements Comparable<Hotel> {
 
     @Override
     public int compareTo(Hotel o) {
-        if (this.precoDiaria < o.precoDiaria){
-            return -1;
-        } else if (this.precoDiaria > o.precoDiaria){
-            return 1;
-        }
-        return 0;
+
+        return Double.valueOf(getPrecoDiaria()).compareTo(o.precoDiaria);
+//        if (this.precoDiaria < o.precoDiaria){
+//            return -1;
+//        } else if (this.precoDiaria > o.precoDiaria){
+//            return 1;
+//        }
+//        return 0;
     }
 }

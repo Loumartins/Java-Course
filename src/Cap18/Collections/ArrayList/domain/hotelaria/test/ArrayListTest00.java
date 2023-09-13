@@ -1,4 +1,4 @@
-package Cap18.Collections.test;
+package Cap18.Collections.ArrayList.domain.hotelaria.test;
 
 import java.util.ArrayList;
 import java.util.List;

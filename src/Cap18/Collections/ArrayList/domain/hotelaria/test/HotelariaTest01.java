@@ -1,10 +1,9 @@
-package Cap18.Collections.hotelaria.test;
+package Cap18.Collections.ArrayList.domain.hotelaria.test;
 
-import Cap18.Collections.hotelaria.domain.CadastroHotel;
-import Cap18.Collections.hotelaria.domain.Hotel;
+import Cap18.Collections.ArrayList.domain.hotelaria.domain.CadastroHotel;
+import Cap18.Collections.ArrayList.domain.hotelaria.domain.Hotel;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.ListIterator;
 
 public class HotelariaTest01 {

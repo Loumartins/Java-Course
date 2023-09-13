@@ -1,4 +1,4 @@
-package Cap18.Collections.megasena.domain;
+package Cap18.Collections.ArrayList.domain.hotelaria.megasena.domain;
 
 import java.util.Iterator;
 

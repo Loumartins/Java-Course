@@ -1,8 +1,6 @@
-package Cap18.Collections.megasena.test;
+package Cap18.Collections.ArrayList.domain.hotelaria.megasena.test;
 
-import Cap18.Collections.megasena.domain.Sorteador;
-
-import java.util.Iterator;
+import Cap18.Collections.ArrayList.domain.hotelaria.megasena.domain.Sorteador;
 
 public class SorteadorTest01 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Cap18.Collections.hotelaria.domain.exceptions;
+package Cap18.Collections.ArrayList.domain.hotelaria.domain.exceptions;
 
 public class HotelNaoEncontradoException extends RuntimeException {
 

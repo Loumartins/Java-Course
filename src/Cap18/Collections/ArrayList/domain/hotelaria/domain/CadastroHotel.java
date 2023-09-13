@@ -1,11 +1,10 @@
-package Cap18.Collections.hotelaria.domain;
+package Cap18.Collections.ArrayList.domain.hotelaria.domain;
 
-import Cap18.Collections.hotelaria.domain.exceptions.HotelJaExistenteException;
-import Cap18.Collections.hotelaria.domain.exceptions.HotelNaoEncontradoException;
+import Cap18.Collections.ArrayList.domain.hotelaria.domain.exceptions.HotelJaExistenteException;
+import Cap18.Collections.ArrayList.domain.hotelaria.domain.exceptions.HotelNaoEncontradoException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class CadastroHotel {
 

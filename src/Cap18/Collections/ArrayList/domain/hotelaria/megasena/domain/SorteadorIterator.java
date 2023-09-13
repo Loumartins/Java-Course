@@ -1,4 +1,4 @@
-package Cap18.Collections.megasena.domain;
+package Cap18.Collections.ArrayList.domain.hotelaria.megasena.domain;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -19,7 +19,7 @@ public class SorteadorIterator implements Iterator<Integer> {
     public Integer next() {
 
         if (!hasNext()){
-            throw new NoSuchElementException("Não há mais numeros");
+            throw new NoSuchElementException("Todos os numeros ja foram sorteados");
         }
         quantidadeSorteada++;
         return RANDOM.nextInt(60);

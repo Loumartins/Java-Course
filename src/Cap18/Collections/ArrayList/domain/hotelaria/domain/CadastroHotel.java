@@ -24,6 +24,10 @@ public class CadastroHotel {
         Collections.sort(hoteis);
     }
 
+    public void ordenarPorPreco(){
+        hoteis.sort(new PrecoHotelComparator());
+    }
+
     public Hotel[] arrayHoteis(){
         Hotel[] hotels = hoteis.toArray(new Hotel[0]);
         return hotels;

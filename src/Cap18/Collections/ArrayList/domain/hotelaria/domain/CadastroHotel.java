@@ -4,6 +4,7 @@ import Cap18.Collections.ArrayList.domain.hotelaria.domain.exceptions.HotelJaExi
 import Cap18.Collections.ArrayList.domain.hotelaria.domain.exceptions.HotelNaoEncontradoException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,6 +20,9 @@ public class CadastroHotel {
         hoteis.add(hotel);
     }
 
+    public void ordenarPorPreco(){
+        Collections.sort(hoteis);
+    }
 
     public Hotel[] arrayHoteis(){
         Hotel[] hotels = hoteis.toArray(new Hotel[0]);

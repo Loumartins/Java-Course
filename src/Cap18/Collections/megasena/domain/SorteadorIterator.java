@@ -1,6 +1,7 @@
 package Cap18.Collections.megasena.domain;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 public class SorteadorIterator implements Iterator<Integer> {
@@ -16,6 +17,10 @@ public class SorteadorIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
+
+        if (!hasNext()){
+            throw new NoSuchElementException("Não há mais numeros");
+        }
         quantidadeSorteada++;
         return RANDOM.nextInt(60);
     }

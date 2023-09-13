@@ -4,6 +4,7 @@ import Cap18.Collections.ArrayList.domain.hotelaria.domain.CadastroHotel;
 import Cap18.Collections.ArrayList.domain.hotelaria.domain.Hotel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -30,19 +31,21 @@ public class HotelariaTest01 {
 //            System.out.println(obterTodo);
 //            }
 
-        imprimirHoteis(hoteis);
+       // imprimirHoteis(hoteis);
 
         cadastroHotel.removerPorCidade("Macae/RJ");
 
-        System.out.println("---------");
+//        System.out.println("---------");
+//
+//        imprimirHoteis(hoteis);
+//
+//        System.out.println("---------");
+//
+//        imprimirHoteisDeTrazPraFrente(hoteis);
 
-        imprimirHoteis(hoteis);
 
-        System.out.println("---------");
-
-        imprimirHoteisDeTrazPraFrente(hoteis);
-
-
+        Hotel[] hotels = cadastroHotel.arrayHoteis();
+        System.out.println(Arrays.toString(hotels));
         }
 
         private static void imprimirHoteis(List<Hotel> hotels){

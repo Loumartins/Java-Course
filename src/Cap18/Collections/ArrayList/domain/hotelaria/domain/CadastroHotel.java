@@ -20,6 +20,11 @@ public class CadastroHotel {
     }
 
 
+    public Hotel[] arrayHoteis(){
+        Hotel[] hotels = hoteis.toArray(new Hotel[0]);
+        return hotels;
+    }
+
     public List<Hotel> obterTodos(){
         return hoteis;
     }
@@ -32,6 +37,11 @@ public class CadastroHotel {
                 hotelIterator.remove();
             }
         }
+//        for (Hotel hotel : hoteis) {
+//            if (hotel.getCidade().equals(cidade)){
+//                hoteis.remove(hotel);
+//            }
+//        }
     }
 
     public void remover(Hotel hotel){

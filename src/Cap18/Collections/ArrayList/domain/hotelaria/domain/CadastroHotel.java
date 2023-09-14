@@ -22,6 +22,7 @@ public class CadastroHotel {
 
     public void ordenarPorNome(){
         Collections.sort(hoteis);
+
     }
 
     public void ordenarPorPreco(){
@@ -29,8 +30,7 @@ public class CadastroHotel {
     }
 
     public Hotel[] arrayHoteis(){
-        Hotel[] hotels = hoteis.toArray(new Hotel[0]);
-        return hotels;
+        return hoteis.toArray(new Hotel[0]);
     }
 
     public List<Hotel> obterTodos(){
@@ -38,15 +38,9 @@ public class CadastroHotel {
     }
 
     public void removerPorCidade(String cidade){
-        Iterator<Hotel> hotelIterator = hoteis.iterator();
-        while (hotelIterator.hasNext()){
-            Hotel hotel = hotelIterator.next();
-            if (hotel.getCidade().equals(cidade)){
-                hotelIterator.remove();
-            }
-        }
+        hoteis.removeIf(hotel -> hotel.getCidade().equals(cidade));
 //        for (Hotel hotel : hoteis) {
-//            if (hotel.getCidade().equals(cidade)){
+//            if (hotel.getCidade().equals(cidade) ){
 //                hoteis.remove(hotel);
 //            }
 //        }

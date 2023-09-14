@@ -1,10 +1,17 @@
 package Cap18.Collections.exercicio.agencia.domain;
 
+import java.util.Objects;
+
 public class PacoteViagem implements Comparable<PacoteViagem> {
     private String descricao;
     private double precoPorPessoa;
 
     public PacoteViagem(String descricao, double precoPorPessoa) {
+        Objects.requireNonNull(descricao);
+
+        if (precoPorPessoa < 0){
+            throw new IllegalArgumentException("Preço por pessoa nao pode ser negativo");
+        }
         this.descricao = descricao;
         this.precoPorPessoa = precoPorPessoa;
     }

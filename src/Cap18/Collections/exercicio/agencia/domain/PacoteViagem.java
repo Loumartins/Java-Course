@@ -33,5 +33,26 @@ public class PacoteViagem {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PacoteViagem that = (PacoteViagem) o;
+
+        if (Double.compare(that.precoPorPessoa, precoPorPessoa) != 0) return false;
+        return descricao.equals(that.descricao);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = descricao.hashCode();
+        temp = Double.doubleToLongBits(precoPorPessoa);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
 
 }

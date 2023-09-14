@@ -2,10 +2,7 @@ package Cap18.Collections.exercicio.agencia.domain;
 
 import Cap18.Collections.exercicio.agencia.exceptions.PacoteDeViagemJaExistenteException;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class CadastroPacoteViagem {
 
@@ -31,6 +28,15 @@ public class CadastroPacoteViagem {
         pacoteViagemList.sort(new PacoteDeViagemPorPrecoComparator().reversed());
     }
 
+    public void removerPorDescricao(String descricao){
+        ListIterator<PacoteViagem> pacoteViagemListIterator = pacoteViagemList.listIterator();
+        for (PacoteViagem pacoteViagem : pacoteViagemList) {
+            if (pacoteViagem.getDescricao().equals(descricao)){
+                pacoteViagemListIterator.remove();
+            }
+            throw new IllegalArgumentException("Nenhum pacote de viagens foi removido");
+        }
 
+    }
 
 }

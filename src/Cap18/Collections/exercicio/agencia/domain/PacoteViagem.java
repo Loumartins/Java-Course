@@ -1,6 +1,6 @@
 package Cap18.Collections.exercicio.agencia.domain;
 
-public class PacoteViagem {
+public class PacoteViagem implements Comparable<PacoteViagem> {
     private String descricao;
     private double precoPorPessoa;
 
@@ -55,4 +55,8 @@ public class PacoteViagem {
     }
 
 
+    @Override
+    public int compareTo(PacoteViagem o) {
+        return descricao.compareTo(o.descricao);
+    }
 }

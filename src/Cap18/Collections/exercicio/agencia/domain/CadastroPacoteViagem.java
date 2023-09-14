@@ -28,15 +28,22 @@ public class CadastroPacoteViagem {
         pacoteViagemList.sort(new PacoteDeViagemPorPrecoComparator().reversed());
     }
 
-    public void removerPorDescricao(String descricao){
-        ListIterator<PacoteViagem> pacoteViagemListIterator = pacoteViagemList.listIterator();
+    public void removerPorDescricao(String descricao) {
+        boolean removido = false;
+
+        pacoteViagemList.removeIf(pacoteViagem -> pacoteViagem.getDescricao().equals(descricao));
+        if (!removido){
+            throw new IllegalArgumentException("Pacote de viagem não encontrado com descrição");
+        }
+    }
+
+    public PacoteViagem buscarPorDescricao(String descricao){
         for (PacoteViagem pacoteViagem : pacoteViagemList) {
             if (pacoteViagem.getDescricao().equals(descricao)){
-                pacoteViagemListIterator.remove();
+                return pacoteViagem;
             }
-            throw new IllegalArgumentException("Nenhum pacote de viagens foi removido");
         }
-
+        throw new IllegalArgumentException("Pacote de viagem não encontrado");
     }
 
 }

@@ -38,4 +38,28 @@ public class Contato {
     public void setIdade(int idade) {
         this.idade = idade;
     }
+
+    @Override
+    public String toString() {
+        return "Contato{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", idade=" + idade +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Contato contato = (Contato) o;
+
+        return email.equals(contato.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return email.charAt(0);
+    }
 }

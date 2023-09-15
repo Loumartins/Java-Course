@@ -1,4 +1,4 @@
-package Cap18.Collections.Conjuntos.test;
+package Cap18.Collections.Conjuntos.Hash.domain.test;
 
 import java.util.HashSet;
 import java.util.Set;

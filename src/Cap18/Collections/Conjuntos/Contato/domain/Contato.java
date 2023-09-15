@@ -2,7 +2,7 @@ package Cap18.Collections.Conjuntos.Contato.domain;
 
 import java.util.Objects;
 
-public class Contato {
+public class Contato implements Comparable<Contato> {
     private String nome;
     private String email;
     private int idade;
@@ -53,11 +53,16 @@ public class Contato {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contato contato = (Contato) o;
-        return nome.equals(contato.nome) && email.equals(contato.email);
+        return email.equals(contato.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, email);
+        return email.charAt(0);
+    }
+
+    @Override
+    public int compareTo(Contato o) {
+        return email.compareTo(o.email);
     }
 }

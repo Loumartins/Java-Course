@@ -65,4 +65,5 @@ public class Contato implements Comparable<Contato> {
     public int compareTo(Contato o) {
         return email.compareTo(o.email);
     }
+
 }

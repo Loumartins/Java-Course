@@ -1,8 +1,10 @@
 package Cap18.Collections.Conjuntos.Contato.test;
 
 import Cap18.Collections.Conjuntos.Contato.domain.Contato;
+import Cap18.Collections.Conjuntos.Contato.domain.IdadeContatoComparator;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -17,7 +19,7 @@ public class ContatoTest01 {
         O ideal é que objetos diferentes retornem codigos hash diferentes!!!
          */
 
-        Set<Contato> contatos = new TreeSet<>();
+        Set<Contato> contatos = new LinkedHashSet<>();
 
         Contato contato1 = new Contato("Maria", "maria@algaworks.com", 40);
         Contato contato2 = new Contato("Ana", "ana@algaworks.com", 30);

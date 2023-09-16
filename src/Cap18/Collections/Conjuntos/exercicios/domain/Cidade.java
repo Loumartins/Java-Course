@@ -37,6 +37,16 @@ public class Cidade implements Comparable <Cidade> {
         this.totalHabitantes = totalHabitantes;
     }
 
+
+    @Override
+    public String toString() {
+        return "Cidade{" +
+                "CodigoIbge=" + CodigoIbge +
+                ", nome='" + nome + '\'' +
+                ", totalHabitantes=" + totalHabitantes +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

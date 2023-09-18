@@ -1,6 +1,8 @@
 package Cap18.Collections.mapas.domain;
 
-public class Carro {
+import java.util.Comparator;
+
+public class Carro implements Comparable<Carro> {
     private final String placa;
     private final String modelo;
 
@@ -25,6 +27,8 @@ public class Carro {
                 '}';
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -40,4 +44,8 @@ public class Carro {
         return placa.hashCode();
     }
 
+    @Override
+    public int compareTo(Carro o) {
+        return this.placa.compareTo(o.getPlaca());
+    }
 }

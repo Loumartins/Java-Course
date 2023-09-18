@@ -2,7 +2,7 @@ package Cap18.Collections.mapas.exercicio.domain;
 
 import java.util.Objects;
 
-public class Cidade {
+public class Cidade implements Comparable<Cidade>{
     private int codigoIBGE;
     private String nome;
     private int totalHabitantes;
@@ -61,5 +61,11 @@ public class Cidade {
     @Override
     public int hashCode() {
         return codigoIBGE;
+    }
+
+
+    @Override
+    public int compareTo(Cidade o) {
+        return Integer.compare(this.codigoIBGE, o.codigoIBGE);
     }
 }

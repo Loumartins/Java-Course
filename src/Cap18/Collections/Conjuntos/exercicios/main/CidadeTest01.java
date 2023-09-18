@@ -11,13 +11,13 @@ public class CidadeTest01 {
     public static void main(String[] args) {
 
         // Performance é mais importante (não garante a ordem dos elementos)
-        //Set<Cidade> cidades = new HashSet<>();
+        Set<Cidade> cidades = new HashSet<>();
 
         // Performance é importante, mas precisa manter ordem de inserção dos elementos
         //Set<Cidade> cidades = new LinkedHashSet<>();
 
         //Performance é menos importante e precisa manter a ordem natural dos elementos
-        Set<Cidade> cidades = new TreeSet<>();
+        //Set<Cidade> cidades = new TreeSet<>();
 
 
 

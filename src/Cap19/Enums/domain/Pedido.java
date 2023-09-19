@@ -39,4 +39,7 @@ public class Pedido {
     public void imprimirPedido(Pedido pedido){
         System.out.println("Nome do cliente: " + getNomeCliente() + " - status do pedido: " + getStatusPedido() + " - origem do pedido: " + getOrigemPedido());
     }
+    public int getTempoEntregaEmHoras(){
+        return statusPedido.getTempoEntregaEmHoras();
+    }
 }

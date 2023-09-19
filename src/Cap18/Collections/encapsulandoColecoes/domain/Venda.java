@@ -1,6 +1,7 @@
 package Cap18.Collections.encapsulandoColecoes.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Venda {
@@ -18,7 +19,7 @@ public class Venda {
     }
 
     public List<ItemVenda> getItens() {
-        return itens;
+        return Collections.unmodifiableList(itens);
     }
 
     public double getValor() {
@@ -26,8 +27,15 @@ public class Venda {
     }
 
     public void adicionarItem(ItemVenda item){
+        if (excedeLimiteDeCompra(item)){
+            throw new LimiteDeCompraExcedidoException("Limite de compras excedido");
+        }
         valor += item.getValor();
         itens.add(item);
+    }
+
+    private boolean excedeLimiteDeCompra(ItemVenda item){
+        return valor + item.getValor() > getCliente().getLimiteCompras();
     }
 }
 

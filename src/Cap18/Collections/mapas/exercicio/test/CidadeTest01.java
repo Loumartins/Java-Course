@@ -31,6 +31,8 @@ public class CidadeTest01 {
 
         // TODO Performance é menos importante e precisa manter a ordem natural das chaves
         // Map<Estado, Cidade> capitais = new TreeMap<>();
+
+
         capitais.put(sp, saoPaulo);
         capitais.put(mg, beloHorizonte);
         capitais.put(ce, fortaleza);

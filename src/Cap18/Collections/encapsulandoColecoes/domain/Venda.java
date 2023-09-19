@@ -6,7 +6,7 @@ import java.util.List;
 public class Venda {
 
         private final Cliente cliente;
-        private List<ItemVenda> itens = new ArrayList<>();
+        private final List<ItemVenda> itens = new ArrayList<>();
         private double valor;
 
     public Venda(Cliente cliente) {
@@ -21,13 +21,13 @@ public class Venda {
         return itens;
     }
 
-    public void setItens(List<ItemVenda> itens) {
-        this.itens = itens;
-    }
-
     public double getValor() {
         return valor;
     }
 
+    public void adicionarItem(ItemVenda item){
+        valor += item.getValor();
+        itens.add(item);
+    }
 }
 

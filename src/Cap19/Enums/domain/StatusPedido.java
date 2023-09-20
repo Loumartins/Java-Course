@@ -14,12 +14,16 @@ public enum StatusPedido {
     StatusPedido(){
 
     }
-
+    // a implementacao do construtor é feita diretamente no proprio Enum.
     StatusPedido(Integer tempoEntregaEmHoras) {
         this.tempoEntregaEmHoras = tempoEntregaEmHoras;
     }
 
     public Integer getTempoEntregaEmHoras() {
         return tempoEntregaEmHoras;
+    }
+
+    public boolean podeMudarParaCancelado(){
+        return StatusPedido.RASCUNHO.equals(this) || StatusPedido.EMITIDO.equals(this);
     }
 }

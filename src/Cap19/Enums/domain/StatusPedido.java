@@ -1,13 +1,48 @@
 package Cap19.Enums.domain;
 
 public enum StatusPedido {
-    RASCUNHO,
-    EMITIDO(12),
-    FATURADO(10),
-    SEPARADO (8),
-    DESPACHADO(6),
-    ENTREGUE (0),
-    CANCELADO;
+    RASCUNHO {
+        @Override
+        public boolean podeMudarParaCancelado() {
+            return true;
+        }
+    },
+    EMITIDO(12){
+        @Override
+        public boolean podeMudarParaCancelado() {
+            return true;
+        }
+    },
+    FATURADO(10){
+        @Override
+        public boolean podeMudarParaCancelado() {
+            return false;
+        }
+    },
+    SEPARADO (8){
+        @Override
+        public boolean podeMudarParaCancelado() {
+            return false;
+        }
+    },
+    DESPACHADO(6){
+        @Override
+        public boolean podeMudarParaCancelado() {
+            return false;
+        }
+    },
+    ENTREGUE (0){
+        @Override
+        public boolean podeMudarParaCancelado() {
+            return false;
+        }
+    },
+    CANCELADO {
+        @Override
+        public boolean podeMudarParaCancelado() {
+            return false;
+        }
+    };
 
     private Integer tempoEntregaEmHoras;
 
@@ -23,7 +58,5 @@ public enum StatusPedido {
         return tempoEntregaEmHoras;
     }
 
-    public boolean podeMudarParaCancelado(){
-        return StatusPedido.RASCUNHO.equals(this) || StatusPedido.EMITIDO.equals(this);
-    }
+    public abstract boolean podeMudarParaCancelado();
 }

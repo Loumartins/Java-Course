@@ -4,7 +4,7 @@ public class Pedido {
 
     private String nomeCliente;
 
-    private StatusPedido statusPedido;
+    private StatusPedido statusPedido = StatusPedido.RASCUNHO;
     private OrigemPedido origemPedido;
     public String getNomeCliente() {
         return nomeCliente;
@@ -24,9 +24,9 @@ public class Pedido {
         return statusPedido;
     }
 
-    public void setStatusPedido(StatusPedido statusPedido) {
-        this.statusPedido = statusPedido;
-    }
+//    public void setStatusPedido(StatusPedido statusPedido) {
+//        this.statusPedido = statusPedido;
+//    }
 
     public OrigemPedido getOrigemPedido() {
         return origemPedido;
@@ -41,5 +41,14 @@ public class Pedido {
     }
     public int getTempoEntregaEmHoras(){
         return statusPedido.getTempoEntregaEmHoras();
+    }
+    public void cancelar(){
+        if (getStatusPedido().podeMudarParaCancelado()){
+
+            statusPedido = StatusPedido.CANCELADO;
+        } else {
+            throw new IllegalArgumentException("Pedido nao pode ser cancelado");
+        }
+
     }
 }

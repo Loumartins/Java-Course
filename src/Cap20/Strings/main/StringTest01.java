@@ -6,14 +6,19 @@ public class StringTest01 {
         String nome = "Luiz"; // String constant pool -> Pool de Strings
 
         long inicio = System.currentTimeMillis();
-        concatString(100_000);
+        concatString(30_000);
         long fim = System.currentTimeMillis();
         System.out.println("Tempo gasto para String " + (fim - inicio) + "ms");
 
         inicio = System.currentTimeMillis();
-        concatStringBuilder(100_000);
+        concatStringBuilder(1_000_000);
         fim = System.currentTimeMillis();
         System.out.println("Tempo gasto para StringBuilder " + (fim - inicio) + "ms");
+
+        inicio = System.currentTimeMillis();
+        concatStringBuffer(1_000_000);
+        fim = System.currentTimeMillis();
+        System.out.println("Tempo gasto para StringBufferr " + (fim - inicio) + "ms");
     }
 
 

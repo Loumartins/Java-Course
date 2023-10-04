@@ -1,6 +1,6 @@
 package Cap20.Strings.main;
 
-public class StringTest01 {
+public class StringPerfomanceTest01 {
     public static void main(String[] args) {
         //Strings no java sao imutaveis
         String nome = "Luiz"; // String constant pool -> Pool de Strings

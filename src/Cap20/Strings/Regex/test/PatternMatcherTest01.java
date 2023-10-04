@@ -20,7 +20,7 @@ public class PatternMatcherTest01 {
         System.out.println("regex "+regex);
         System.out.println("Posicoes encontradas");
         while (matcher.find()){
-            System.out.print(matcher.start()+ " ");
+            System.out.print(matcher.start()+ " " + matcher.group()+ "\n");
         }
     }
 }

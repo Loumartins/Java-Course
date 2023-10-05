@@ -38,7 +38,7 @@ public class JsonScraper {
 
         //System.out.println(json);
 
-        String regex = ".*?\"nome\":\\s*\"(?<nome>.*?)\".*?";
+        String regex = "\"nome\":\\s*\"(?<nome>.*?)\".*?";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(json);
         while(matcher.find()){

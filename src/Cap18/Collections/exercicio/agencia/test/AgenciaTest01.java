@@ -20,7 +20,7 @@ public class AgenciaTest01 {
         cadastroPacoteViagem.adicionar("Disney (10 noites)", 20_000);
         cadastroPacoteViagem.adicionar("Natal Luz em Gramado (5 noites)", 8_500);
 
-        cadastroPacoteViagem.removerPorDescricao("Disney (10 noites)");
+       cadastroPacoteViagem.removerPorDescricao("Disney (10 noites)");
 
 //        cadastroPacoteViagem.ordenar();
 
@@ -29,7 +29,7 @@ public class AgenciaTest01 {
 //        PacoteViagem pacoteEncontrado = cadastroPacoteViagem.buscarPorDescricao("Disney (10 noites)");
 //        System.out.println(pacoteEncontrado);
 
-         // imprimirPacotes(cadastroPacoteViagem.obterTodos());
+      imprimirPacotes(cadastroPacoteViagem.obterTodos());
 
 
 

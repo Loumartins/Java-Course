@@ -38,18 +38,19 @@ public class CadastroPacoteViagem {
     }
 
     public void removerPorDescricao(String descricao) {
-        boolean removido = false;
-        Iterator<PacoteViagem> pacoteViagemIterator = pacoteViagemList.iterator();
-        while (pacoteViagemIterator.hasNext()){
-            PacoteViagem pacoteViagem = pacoteViagemIterator.next();
-           if (pacoteViagem.getDescricao().equals(descricao)){
-               pacoteViagemIterator.remove();
-               removido = true;
-           }
-        }
-        if (!removido){
-            throw new IllegalArgumentException("Pacote de viagem não encontrado com descrição");
-        }
+//        boolean removido = false;
+//        Iterator<PacoteViagem> pacoteViagemIterator = pacoteViagemList.iterator();
+//        while (pacoteViagemIterator.hasNext()){
+//            PacoteViagem pacoteViagem = pacoteViagemIterator.next();
+//           if (pacoteViagem.getDescricao().equals(descricao)){
+//               pacoteViagemIterator.remove();
+//               removido = true;
+//           }
+//        }
+//        if (!removido){
+//            throw new IllegalArgumentException("Pacote de viagem não encontrado com descrição");
+//        }
+        pacoteViagemList.removeIf(pacoteViagem -> pacoteViagem.getDescricao().equals(descricao));
     }
 
     public PacoteViagem buscarPorDescricao(String descricao){

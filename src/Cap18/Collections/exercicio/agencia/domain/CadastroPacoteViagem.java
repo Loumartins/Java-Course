@@ -8,6 +8,15 @@ public class CadastroPacoteViagem {
 
     private List<PacoteViagem> pacoteViagemList = new ArrayList<>();
 
+
+
+    public void adicionar(PacoteViagem pacoteViagem){
+        if (pacoteViagemList.equals(pacoteViagem)){
+            throw  new PacoteDeViagemJaExistenteException("Pacote de viagem ja existente");
+        }
+        pacoteViagemList.add(pacoteViagem);
+    }
+    //gerando sobrecarga no metodo adicionar
     public void adicionar(String descricao, double precoDiaria){
         PacoteViagem pacoteViagem = new PacoteViagem(descricao, precoDiaria);
         if (pacoteViagemList.equals(pacoteViagem)){

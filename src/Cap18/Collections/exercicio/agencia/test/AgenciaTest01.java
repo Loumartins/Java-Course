@@ -8,6 +8,13 @@ import java.util.List;
 public class AgenciaTest01 {
     public static void main(String[] args) {
         CadastroPacoteViagem cadastroPacoteViagem = new CadastroPacoteViagem();
+
+        //utilizando o metodo adicionar de uma outra forma
+
+//        PacoteViagem pacoteViagem = new PacoteViagem("Istambul e Capadocia(20 noites)", 18_000);
+//        cadastroPacoteViagem.adicionar(pacoteViagem);
+
+
         cadastroPacoteViagem.adicionar("Istambul e Capadócia(20 noites)", 18_000);
         cadastroPacoteViagem.adicionar("Neve em Bariloche (10 noites)", 11_000);
         cadastroPacoteViagem.adicionar("Disney (10 noites)", 20_000);

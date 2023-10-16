@@ -5,6 +5,7 @@ import java.util.Date;
 public class DateTest02 {
     public static void main(String[] args) {
 
+        //Calculando e comparando datas com Date
 
         Date hoje = new Date();
         Date ontem = new Date(System.currentTimeMillis() - (24*60*60*1000));
@@ -18,7 +19,7 @@ public class DateTest02 {
         double diferencaHoras = diferencaMilis/1000/60/60;
         System.out.println("Diferença em horas: " + diferencaHoras);
 
-        //Calculando e comparando datas com Date
+
 
         System.out.printf("Depois: %b%n", hoje.after(ontem));
         System.out.printf("Antes: %b%n", hoje.before(ontem));

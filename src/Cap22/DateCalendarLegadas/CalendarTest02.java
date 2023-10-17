@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-public class CalendarTest02 {
+public class  CalendarTest02 {
     public static void main(String[] args) {
         DateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Scanner sc = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package Cap24.ClassesAninhadas.domain;
+package Cap24.ClassesAninhadas.estaticas.domain;
 
 public class ServicoEmail {
  public void enviar(Mensagem mensagem){

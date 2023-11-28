@@ -1,4 +1,4 @@
-package Cap24.ClassesAninhadas.domain;
+package Cap24.ClassesAninhadas.estaticas.domain;
 
 import java.util.Comparator;
 import java.util.List;

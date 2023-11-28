@@ -1,6 +1,6 @@
-package Cap24.ClassesAninhadas.test;
+package Cap24.ClassesAninhadas.estaticas.test;
 
-import Cap24.ClassesAninhadas.domain.ServicoEmail;
+import Cap24.ClassesAninhadas.estaticas.domain.ServicoEmail;
 
 public class MensageiroTest01 {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package Cap24.ClassesAninhadas.test;
+package Cap24.ClassesAninhadas.estaticas.test;
 
-import Cap24.ClassesAninhadas.domain.Cliente;
+import Cap24.ClassesAninhadas.estaticas.domain.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;

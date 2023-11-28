@@ -1,6 +1,6 @@
-package Cap24.ClassesAninhadas.test;
+package Cap24.ClassesAninhadas.estaticas.test;
 
-import Cap24.ClassesAninhadas.domain.Cliente;
+import Cap24.ClassesAninhadas.estaticas.domain.Cliente;
 
 public class ClienteTest02 {
     public static void main(String[] args) {

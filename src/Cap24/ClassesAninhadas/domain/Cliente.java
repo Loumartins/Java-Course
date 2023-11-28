@@ -4,8 +4,13 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Cliente {
+
+    public enum Status {
+        ATIVO, BLOQUEADO
+    }
     private String nome;
     private int idade;
+    private Status status = Status.ATIVO;
 
     public Cliente(String nome, int idade) {
         this.nome = nome;
@@ -18,6 +23,14 @@ public class Cliente {
 
     public int getIdade() {
         return idade;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override

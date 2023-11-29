@@ -16,11 +16,35 @@ public class Conta {
     public Transacao efetuarPagamento(BigDecimal valor){
         BigDecimal taxa = valor.multiply(new BigDecimal("0.10"));
         saldo = saldo.subtract(taxa).subtract(valor);
-        return new Pagamento(taxa, valor);
+        class Pagamento implements Transacao{
+
+            @Override
+            public BigDecimal getValorTotal() {
+                return valor.add(taxa);
+            }
+
+            @Override
+            public void reembolsar() {
+                saldo = saldo.add(taxa).add(valor);
+            }
+        }
+        return new Pagamento();
     }
 
     public Transacao cobrarTarifa (BigDecimal valor){
         saldo = saldo.subtract(valor);
-        return  new Tarifa(valor);
+        class Tarifa implements Transacao {
+
+            @Override
+            public BigDecimal getValorTotal() {
+                return valor;
+            }
+
+            @Override
+            public void reembolsar() {
+                saldo = saldo.add(valor);
+            }
+        }
+        return  new Tarifa();
     }
 }

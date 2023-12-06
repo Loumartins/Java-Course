@@ -30,8 +30,10 @@ public class ServicoEmail {
         }
 
         public String getTexto() {
-            return texto + gerarAssinatura();
+            return texto + gerarAssinatura() ;
         }
+
     }
+
 
 }

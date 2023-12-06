@@ -2,7 +2,7 @@ package Cap24.ClassesAninhadas.classesLocais.domain;
 
 import java.math.BigDecimal;
 
-public class Conta {
+public class  Conta {
  private BigDecimal saldo;
 
     public Conta(BigDecimal saldo) {

@@ -16,18 +16,18 @@ public class PedidoTest01 {
             Cliente cliente = new Cliente("João");
             Pedido pedido = new Pedido(cliente);
 
-            Pedido.Item item1 = pedido.adicionarItem("iPhone 14", 3, new BigDecimal("12000"));
-            Pedido.Item item2 = pedido.adicionarItem("Apple Watch", 3, new BigDecimal("5900"));
+            Pedido.Item item1 = pedido.adicionarItem("iPhone 14", new BigDecimal("12000"), 3);
+            Pedido.Item item2 = pedido.adicionarItem("Apple Watch", new BigDecimal("5900"), 3);
 
             imprimirResumo(pedido);
 
             System.out.println("---");
 
-            item1.setQuantidade(10);
-            imprimirResumo(pedido);
+//            item1.setQuantidade(10);
+//            imprimirResumo(pedido);
 
             pedido.emitir();
-            item1.setQuantidade(20); // Não pode alterar pedido após ser emitido
+          //  item1.setQuantidade(20); // Não pode alterar pedido após ser emitido
         }
 
         private static void imprimirResumo(Pedido pedido) {

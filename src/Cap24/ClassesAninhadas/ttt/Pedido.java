@@ -1,4 +1,4 @@
-package Cap24.ClassesAninhadas.exercicios.domain;
+package Cap24.ClassesAninhadas.ttt;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -7,10 +7,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Pedido {
-
-
     private final Cliente cliente;
-    private StatusPedido status = StatusPedido.RASCUNHO;
+    private Status status = Status.RASCUNHO;
     private BigDecimal valorTotal = BigDecimal.ZERO;
     private final List<Item> itens = new ArrayList<>();
 
@@ -23,7 +21,7 @@ public class Pedido {
         return cliente;
     }
 
-    public StatusPedido getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -35,43 +33,46 @@ public class Pedido {
         return valorTotal;
     }
 
-    public Item adicionarItem(String descricao, BigDecimal valorUnitario, int quantidade){
-        Item item = new Item(descricao, valorUnitario, quantidade);
+    public Item adicionarItem(String descricao, int quantidade, BigDecimal valorUnitario) {
+        Item item = new Item(descricao, quantidade, valorUnitario);
         itens.add(item);
         return item;
     }
+
     public void emitir() {
         checarPedidoParaModificacao();
-        status = StatusPedido.EMITIDO;
+        status = Status.EMITIDO;
     }
 
     public void cancelar() {
         checarPedidoParaModificacao();
-        status = StatusPedido.CANCELADO;
+        status = Status.CANCELADO;
     }
 
-    void checarPedidoParaModificacao() {
-        if (!StatusPedido.RASCUNHO.equals(status)) {
+    private void checarPedidoParaModificacao() {
+        if (!Status.RASCUNHO.equals(status)) {
             throw new IllegalArgumentException("Pedido não pode ser modificado");
         }
     }
 
-    public enum StatusPedido {
-        RASCUNHO,EMITIDO,CANCELADO;
+    public enum Status {
+        RASCUNHO, EMITIDO, CANCELADO
     }
+
     public class Item {
+
         private final String descricao;
-        private int quantidade;
         private final BigDecimal valorUnitario;
+        private int quantidade;
 
-
-        public Item(String descricao, BigDecimal valorUnitario, int quantidade) {
+        private Item(String descricao, int quantidade, BigDecimal valorUnitario) {
             Objects.requireNonNull(descricao);
             Objects.requireNonNull(valorUnitario);
 
-            if (valorUnitario.compareTo(BigDecimal.ZERO) < 1){
-                throw new IllegalArgumentException("Valor unitário deve ser maior do que 0");
+            if (valorUnitario.compareTo(BigDecimal.ZERO) < 1) {
+                throw new IllegalArgumentException("Valor unitário deve ser mair que zero");
             }
+
             this.descricao = descricao;
             this.valorUnitario = valorUnitario;
             setQuantidade(quantidade);
@@ -92,20 +93,23 @@ public class Pedido {
         public void setQuantidade(int quantidade) {
             checarPedidoParaModificacao();
 
-            if(quantidade < 1){
-                throw new IllegalArgumentException("Quantidade deve ser maior que 0");
+            if (quantidade < 1) {
+                throw new IllegalArgumentException("Quantidade deve ser maior que zero");
             }
+
             valorTotal = valorTotal.subtract(calcularValorTotal(this.quantidade));
             this.quantidade = quantidade;
             valorTotal = valorTotal.add(calcularValorTotal(quantidade));
         }
 
-        public BigDecimal getValorTotal(){
-            return calcularValorTotal(quantidade);
+        public BigDecimal getValorTotal() {
+            return calcularValorTotal(this.quantidade);
         }
 
-        private BigDecimal calcularValorTotal(int quantidade){
+        private BigDecimal calcularValorTotal(int quantidade) {
             return valorUnitario.multiply(new BigDecimal(quantidade));
         }
+
     }
+
 }

@@ -13,7 +13,7 @@ public class Pedido {
     private final Cliente cliente;
     private StatusPedido status = StatusPedido.RASCUNHO;
     BigDecimal valorTotal = BigDecimal.ZERO;
-    private final List<ItemPedido> itens = new ArrayList<>();
+    private final List<Item> itens = new ArrayList<>();
 
     public Pedido(Cliente cliente) {
         Objects.requireNonNull(cliente);
@@ -28,7 +28,7 @@ public class Pedido {
         return status;
     }
 
-    public List<ItemPedido> getItens() {
+    public List<Item> getItens() {
         return itens;
     }
 
@@ -36,8 +36,8 @@ public class Pedido {
         return valorTotal;
     }
 
-    public ItemPedido adicionarItem(String descricao, int quantidade, BigDecimal valorUnitario){
-        ItemPedido item = new ItemPedido(this, descricao, valorUnitario, quantidade);
+    public Item adicionarItem(String descricao, int quantidade, BigDecimal valorUnitario){
+        Item item = new Item(this, descricao, valorUnitario, quantidade);
         itens.add(item);
         return item;
     }
@@ -56,13 +56,13 @@ public class Pedido {
             throw new IllegalArgumentException("Pedido não pode ser modificado");
         }
     }
-    public class ItemPedido {
+    public class Item {
         private Pedido pedido;
         private final String descricao;
         private final BigDecimal valorUnitario;
         private int quantidade;
 
-        public ItemPedido(Pedido pedido, String descricao, BigDecimal valorUnitario, int quantidade) {
+        public Item(Pedido pedido, String descricao, BigDecimal valorUnitario, int quantidade) {
             Objects.requireNonNull(pedido);
             Objects.requireNonNull(descricao);
             Objects.requireNonNull(valorUnitario);

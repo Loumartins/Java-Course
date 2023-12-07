@@ -7,6 +7,9 @@ import java.util.Objects;
 
 public class Pedido {
 
+   public enum StatusPedido {
+       RASCUNHO,EMITIDO,CANCELADO;
+    }
     private final Cliente cliente;
     private StatusPedido status = StatusPedido.RASCUNHO;
     BigDecimal valorTotal = BigDecimal.ZERO;

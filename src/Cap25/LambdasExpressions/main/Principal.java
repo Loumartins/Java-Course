@@ -31,14 +31,26 @@ public class Principal {
 //        };
 
         //passando o bloco de codigo direto na expressao.
-        List<Cliente> clienteConsulta = cadastroCliente.consultar((Cliente cliente) -> {
-            boolean resultado = cliente.getIdade() > 40;
-            return  resultado;
-        });
+        List<Cliente> clienteConsulta = cadastroCliente.consultar(cliente -> cliente.getIdade() > 40);
+
+        //Utilizando Comparator com expressoes lambda
+        List<Cliente> clienteComparator = cadastroCliente.getClientes();
+
+        clienteComparator.sort((cliente1, cliente2) -> Integer.compare(cliente1.getIdade(), cliente2.getIdade()));
 
         for (Cliente cliente : clienteConsulta) {
             System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
         }
+
+        System.out.println("---------------");
+
+        for (Cliente cliente : clienteComparator) {
+            System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
+        }
+
+
+
+
 
 //        List<Cliente> clienteList = cadastroCliente.getClientes();
 //

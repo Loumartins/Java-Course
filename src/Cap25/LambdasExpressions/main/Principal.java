@@ -15,15 +15,26 @@ public class Principal {
         cadastroCliente.adicionar(new Cliente("Joaquina", 45));
         cadastroCliente.adicionar(new Cliente("Josefina", 25));
 
-        //gerando classe aninhada
-        Filtro<Cliente> clienteFiltro = new Filtro<Cliente>() {
-            @Override
-            public boolean avaliar(Cliente cliente) {
-                return cliente.getIdade() > 40;
-            }
-        };
+        //gerando classe anonima
+//        Filtro<Cliente> clienteFiltro = new Filtro<Cliente>() {
+//            @Override
+//            public boolean avaliar(Cliente cliente) {
+//                return cliente.getIdade() > 40;
+//            }
+//        };
 
-        List<Cliente> clienteConsulta = cadastroCliente.consultar(clienteFiltro);
+
+        // utilizando lambda expression.
+//        Filtro<Cliente> filtro = (Cliente cliente) -> {
+//            boolean resultado = cliente.getIdade() > 40;
+//            return resultado;
+//        };
+
+        //passando o bloco de codigo direto na expressao.
+        List<Cliente> clienteConsulta = cadastroCliente.consultar((Cliente cliente) -> {
+            boolean resultado = cliente.getIdade() > 40;
+            return  resultado;
+        });
 
         for (Cliente cliente : clienteConsulta) {
             System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());

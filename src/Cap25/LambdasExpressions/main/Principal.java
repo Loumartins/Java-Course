@@ -2,7 +2,6 @@ package Cap25.LambdasExpressions.main;
 
 import Cap25.LambdasExpressions.domain.CadastroCliente;
 import Cap25.LambdasExpressions.domain.Cliente;
-import Cap25.LambdasExpressions.domain.Filtro;
 
 import java.util.List;
 
@@ -34,19 +33,19 @@ public class Principal {
         List<Cliente> clienteConsulta = cadastroCliente.consultar(cliente -> cliente.getIdade() > 40);
 
         //Utilizando Comparator com expressoes lambda
-        List<Cliente> clienteComparator = cadastroCliente.getClientes();
-
-        clienteComparator.sort((cliente1, cliente2) -> Integer.compare(cliente1.getIdade(), cliente2.getIdade()));
+//        List<Cliente> clienteComparator = cadastroCliente.getClientes();
+//
+//        clienteComparator.sort((cliente1, cliente2) -> Integer.compare(cliente1.getIdade(), cliente2.getIdade()));
 
         for (Cliente cliente : clienteConsulta) {
             System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
         }
 
-        System.out.println("---------------");
 
-        for (Cliente cliente : clienteComparator) {
-            System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
-        }
+
+//        for (Cliente cliente : clienteComparator) {
+//            System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
+//        }
 
 
 

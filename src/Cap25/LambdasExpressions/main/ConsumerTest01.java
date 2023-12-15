@@ -31,5 +31,7 @@ public class ConsumerTest01 {
 //        for (Produto produto : produtos) {
 //            System.out.println(produto);
 //        }
+
+
     }
 }

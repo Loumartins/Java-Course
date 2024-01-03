@@ -1,9 +1,9 @@
-package Cap26.Optional.ciaarea.test;
+package Cap26.Optional.alga.ciaarea.test;
 
-import Cap26.Optional.ciaarea.domain.Reserva;
-import Cap26.Optional.ciaarea.domain.ServicoDeBagagem;
-import Cap26.Optional.ciaarea.domain.ServicoDeReserva;
-import Cap26.Optional.ciaarea.domain.Voo;
+import Cap26.Optional.alga.ciaarea.domain.Reserva;
+import Cap26.Optional.alga.ciaarea.domain.ServicoDeBagagem;
+import Cap26.Optional.alga.ciaarea.domain.ServicoDeReserva;
+import Cap26.Optional.alga.ciaarea.domain.Voo;
 
 public class VooTest01 {
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class VooTest01 {
         servicoReserva.adicionar(new Reserva("74F877", voo , "Sebastiao Silveira"));
 
 
-        servicoDeBagagem.contratar("28AXXX", 2);
+        servicoDeBagagem.contratar("28A888", 2);
 
         servicoReserva.getReservas().forEach(System.out::println);
 

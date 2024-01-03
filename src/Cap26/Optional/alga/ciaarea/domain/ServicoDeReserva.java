@@ -1,9 +1,6 @@
-package Cap26.Optional.ciaarea.domain;
+package Cap26.Optional.alga.ciaarea.domain;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class ServicoDeReserva {
     private final Set<Reserva> reservas = new HashSet<>();
@@ -21,7 +18,7 @@ public class ServicoDeReserva {
         }
 
     }
-    public Reserva buscar (String codigo){
+    public Optional<Reserva> buscar (String codigo){
         Reserva reservaEncontrada = null;
 
         for (Reserva reserva : reservas) {
@@ -30,6 +27,6 @@ public class ServicoDeReserva {
                 break;
             }
         }
-        return reservaEncontrada;
+        return Optional.ofNullable(reservaEncontrada);
     }
 }

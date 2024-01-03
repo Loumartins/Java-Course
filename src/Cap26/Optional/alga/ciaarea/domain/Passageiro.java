@@ -1,4 +1,4 @@
-package Cap26.Optional.ciaarea.domain;
+package Cap26.Optional.alga.ciaarea.domain;
 
 import java.util.Objects;
 

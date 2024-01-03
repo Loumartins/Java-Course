@@ -1,6 +1,7 @@
-package Cap26.Optional.ciaarea.domain;
+package Cap26.Optional.alga.ciaarea.domain;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class ServicoDeBagagem {
 
@@ -16,12 +17,9 @@ public class ServicoDeBagagem {
             throw new IllegalArgumentException("Quantidade de bagagens invalida");
         }
 
-        Reserva reserva = servicoDeReserva.buscar(codigoReserva);
+        Optional<Reserva> reservaOptional = servicoDeReserva.buscar(codigoReserva);
 
-        if (reserva == null) {
-            throw new ReservaNaoEncontradaException(String.format("Código de reserva %s nao existe %n", codigoReserva));
-        }
-        reserva.adicionarBagagens(quantidadeBagagens);
+        reservaOptional.get().adicionarBagagens(quantidadeBagagens);
 
     }
 }

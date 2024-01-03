@@ -1,4 +1,4 @@
-package Cap26.Optional.ciaarea.domain;
+package Cap26.Optional.alga.ciaarea.domain;
 
 public class ReservaNaoEncontradaException extends RuntimeException {
 

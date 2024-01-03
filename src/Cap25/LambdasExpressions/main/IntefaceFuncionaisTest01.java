@@ -16,18 +16,18 @@ public class IntefaceFuncionaisTest01 {
 
         //Function = representa uma função que aceita um argumento de um tipo e retorna
         // um resultado de um outro tipo
-        Function<String, LocalDate> function = str -> LocalDate.parse(str);
+        Function<String, LocalDate> function = LocalDate::parse;
         LocalDate data = function.apply("2023-06-12");
         System.out.println(data);
 
         //Supplier = representa um fornecedor de um resultado. Comumente usada para gerar ou
         //fornecer um valor, mas nao tem nenhum argumento na operação.
-        Supplier<LocalDateTime> supplier = () -> LocalDateTime.now();
+        Supplier<LocalDateTime> supplier = LocalDateTime::now;
         LocalDateTime localDateTime = supplier.get();
         System.out.println(localDateTime);
 
         //Consumer = representa uma operação que aceita um argumento, mas nao retorna nenhum resultado.
-        Consumer<String> stringConsumer = str -> System.out.println(str);
+        Consumer<String> stringConsumer = System.out::println;
         stringConsumer.accept("oOo");
     }
 

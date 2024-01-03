@@ -1,13 +1,12 @@
 package Cap25.LambdasExpressions.main;
 
 import Cap25.LambdasExpressions.domain.Produto;
+import Cap25.LambdasExpressions.domain.ServicoInativacaoProduto;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.function.Function;
 
-public class FunctionTest01 {
+public class MethodReferenceTest01 {
     public static void main(String[] args) {
         var produtos = new ArrayList<Produto>();
 
@@ -18,16 +17,16 @@ public class FunctionTest01 {
         produtos.add(new Produto("Arroz", new BigDecimal("15.9"), 0));
         produtos.add(new Produto("Chocolate", new BigDecimal("25.1"), 10, Produto.Status.INATIVO));
 
+        //utilizando method reference em uma instancia da classe ServicoInativacaoProduto
+//        var inativarProduto = new ServicoInativacaoProduto();
 
-
-        Function<Produto, Integer> function1 = Produto::getQuantidade;
-        Function<Produto, String> function2 = Produto::getNome;
-
-        //utilizando a interface funcional Function para comparação
-        //importante lembrar que a function que é argumento do metodo comparing
-        //funciona como extrator de um valor de um atributo.
-        produtos.sort(Comparator.comparing(function1).thenComparing(function2));
+        //produto.forEach(inativarProduto::inativar)
+        //criando method reference de um metodo estatico de uma classe
+        produtos.forEach(ServicoInativacaoProduto::inativar);
 
         produtos.forEach(System.out::println);
+
+
+
     }
 }

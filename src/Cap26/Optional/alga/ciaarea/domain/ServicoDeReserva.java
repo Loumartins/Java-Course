@@ -19,14 +19,16 @@ public class ServicoDeReserva {
 
     }
     public Optional<Reserva> buscar (String codigo){
-        Reserva reservaEncontrada = null;
+        //Reserva reservaEncontrada = null;
 
         for (Reserva reserva : reservas) {
             if (reserva.getCodigo().equals(codigo)) {
-                reservaEncontrada = reserva;
-                break;
+                return Optional.of(reserva);
+//                reservaEncontrada = reserva;
+//                break;
             }
         }
-        return Optional.ofNullable(reservaEncontrada);
+        return Optional.empty();
+        //return Optional.ofNullable(reservaEncontrada);
     }
 }

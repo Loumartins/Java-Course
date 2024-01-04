@@ -17,9 +17,19 @@ public class ServicoDeBagagem {
             throw new IllegalArgumentException("Quantidade de bagagens invalida");
         }
 
-        Optional<Reserva> reservaOptional = servicoDeReserva.buscar(codigoReserva);
-
-        reservaOptional.get().adicionarBagagens(quantidadeBagagens);
-
+//        Optional<Reserva> reservaOptional = servicoDeReserva.buscar(codigoReserva);
+//
+//        //verificando se ha valores dentro do optional
+////        if (reservaOptional.isPresent()){
+////            reservaOptional.get().adicionarBagagens(quantidadeBagagens);
+////        } else {
+////            throw new ReservaNaoEncontradaException("Reserva não existe");
+////        }
+////        reservaOptional.ifPresent(reserva -> reserva.adicionarBagagens(quantidadeBagagens));
+//
+        //utilizando o metodo orElseThrow da classe Optional
+        servicoDeReserva.buscar(codigoReserva)
+                .orElseThrow(() -> new ReservaNaoEncontradaException("Reserva inexistente"))
+                .adicionarBagagens(quantidadeBagagens);
     }
 }

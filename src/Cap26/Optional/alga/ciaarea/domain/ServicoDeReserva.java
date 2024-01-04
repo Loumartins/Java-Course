@@ -1,6 +1,7 @@
 package Cap26.Optional.alga.ciaarea.domain;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 public class ServicoDeReserva {
     private final Set<Reserva> reservas = new HashSet<>();
@@ -16,6 +17,12 @@ public class ServicoDeReserva {
             throw new RuntimeException(
                     String.format("Reserva %s já existe", reserva.getCodigo()));
         }
+
+    }
+
+    public Reserva buscar (String codigo, Supplier<Reserva> supplierInexistente){
+       return buscar(codigo).orElseGet(supplierInexistente);
+
 
     }
     public Optional<Reserva> buscar (String codigo){

@@ -1,6 +1,7 @@
 package Cap26.Optional.alga.ciaarea.domain;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class Reserva {
     private final String codigo;
@@ -25,8 +26,9 @@ public class Reserva {
         return voo;
     }
 
-    public Passageiro getPassageiro() {
-        return passageiro;
+    //alterando retorno do metodo para um Optional
+    public Optional<Passageiro> getPassageiro() {
+        return Optional.of(passageiro);
     }
 
     public String getNomePassageiro() {

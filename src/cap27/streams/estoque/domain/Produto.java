@@ -6,7 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Produto {
-    public enum Status{
+
+    public enum Status {
         ATIVO, INATIVO
     }
 
@@ -15,9 +16,10 @@ public class Produto {
     private int quantidade;
     private Status status = Status.ATIVO;
     private final Fabricante fabricante;
-    private final Set<Categoria> categorias= new HashSet<>();
+    private final Set<Categoria> categorias = new HashSet<>();
 
-    public Produto(String nome, BigDecimal preco, int quantidade, Fabricante fabricante, Categoria... categorias) {
+    public Produto(String nome, BigDecimal preco, int quantidade,
+                   Fabricante fabricante, Categoria... categorias) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -25,16 +27,17 @@ public class Produto {
         this.categorias.addAll(Set.of(categorias));
     }
 
-    public Produto(String nome, BigDecimal preco, int quantidade, Status status, Fabricante fabricante, Categoria...categorias) {
-       this(nome, preco, quantidade, fabricante, categorias);
-       this.status = status;
+    public Produto(String nome, BigDecimal preco, int quantidade,
+                   Fabricante fabricante, Status status, Categoria... categorias) {
+        this(nome, preco, quantidade, fabricante, categorias);
+        this.status = status;
     }
 
-    public String getNome (){
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -61,27 +64,39 @@ public class Produto {
     public Set<Categoria> getCategorias() {
         return Collections.unmodifiableSet(categorias);
     }
-    public void inativar(){
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void inativar() {
         status = Status.INATIVO;
     }
-    public void ativar(){
+
+    public void ativar() {
         status = Status.ATIVO;
     }
+
     public boolean isAtivo() {
         return Status.ATIVO.equals(status);
     }
-    public boolean isInativo(){
+
+    public boolean isInativo() {
         return Status.INATIVO.equals(status);
     }
-    public void adicionarCategoria(Categoria categoria){
+
+    public void adicionarCategoria(Categoria categoria) {
         this.categorias.add(categoria);
     }
-    public void removerCategoria(Categoria categoria){
+
+    public void removerCategoria(Categoria categoria) {
         this.categorias.remove(categoria);
     }
-    public boolean temEstoque(){
+
+    public boolean temEstoque() {
         return getQuantidade() > 0;
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -89,6 +104,7 @@ public class Produto {
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         return result;
     }
+
     @Override
     public String toString() {
         return "Produto{" +

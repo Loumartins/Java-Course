@@ -1,4 +1,4 @@
-package cap27.streams.domain;
+package cap27.streams.estoque.domain;
 
 import java.math.BigDecimal;
 import java.util.Collections;

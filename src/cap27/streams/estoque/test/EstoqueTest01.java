@@ -1,12 +1,14 @@
 package cap27.streams.estoque.test;
 
 import cap27.streams.estoque.domain.CadastroProduto;
+import cap27.streams.estoque.domain.Categoria;
 import cap27.streams.estoque.domain.Fabricante;
 import cap27.streams.estoque.domain.Produto;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class EstoqueTest01 {
@@ -15,7 +17,36 @@ public class EstoqueTest01 {
         List<Produto> produtos = cadastroDeProdutos.obterTodos();
 
 
+//       usando as especializações de Stream para inteiros
 
+        produtos.stream()
+                .filter(Produto::temEstoque)
+                .mapToInt(Produto::getQuantidade)
+                .forEach(System.out::println);
+
+
+//        ------------------------------------------------------------
+//        imprimindo as categorias utilizando a operação map()
+
+//        Stream<Set<Categoria>> stream = produtos.stream()
+//                .filter(Produto::temEstoque)
+//                .map(Produto::getCategorias);
+//
+//
+//        stream.forEach(obj -> {
+//            obj.stream()
+//                    .forEach(System.out::println);
+//        });
+//
+//        System.out.println("---------------------------------------");
+
+        //utilizando a operação flatMap() para "achatar" uma stream
+//        produtos.stream()
+//                .filter(Produto::temEstoque)
+//                .flatMap(produto ->produto.getCategorias().stream())
+//                .distinct()
+//                .forEach(System.out::println);
+//      ------------------------------------------------------------
 
 //     utilizando o map()
 //       Stream<Fabricante> fabricanteStream = produtos.stream()
@@ -25,11 +56,11 @@ public class EstoqueTest01 {
 //       fabricanteStream.forEach(System.out::println);
 
 //     enxugando o codigo e obtendo elementos distintos
-        produtos.stream()
-                .filter(Produto::temEstoque)
-                .map(Produto::getFabricante)
-                .distinct()
-                .forEach(System.out::println);
+//        produtos.stream()
+//                .filter(Produto::temEstoque)
+//                .map(Produto::getFabricante)
+//                .distinct()
+//                .forEach(System.out::println);
 
 //       é passado uma interface funcional Function no map para realizar o mapeamento (transformação)
 //       no exemplo o map() retorna uma stream de fabricante.

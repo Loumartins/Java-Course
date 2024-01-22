@@ -5,6 +5,7 @@ import cap27.streams.estoque.domain.Categoria;
 import cap27.streams.estoque.domain.Fabricante;
 import cap27.streams.estoque.domain.Produto;
 
+import java.math.BigDecimal;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +17,14 @@ public class EstoqueTest01 {
     public static void main(String[] args) {
         var cadastroDeProdutos = new CadastroProduto();
         List<Produto> produtos = cadastroDeProdutos.obterTodos();
+
+        //reduzindo um streams de produtos em BigDecimal -> o valor do estoque total
+        BigDecimal valorEmEstoque = produtos.stream()
+                .map(produto -> produto.getPreco().multiply(new BigDecimal(produto.getQuantidade())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        System.out.println(valorEmEstoque);
+
 
 
 //       IntBinaryOperator operadoraSoma = Integer::sum;

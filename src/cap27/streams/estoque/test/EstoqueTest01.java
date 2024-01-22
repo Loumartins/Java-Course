@@ -14,23 +14,27 @@ public class EstoqueTest01 {
         var cadastroDeProdutos = new CadastroProduto();
         List<Produto> produtos = cadastroDeProdutos.obterTodos();
 
+
+
+
+//     utilizando o map()
+//       Stream<Fabricante> fabricanteStream = produtos.stream()
+//                .filter(Produto::temEstoque)
+//                .map(Produto::getFabricante);
 //
-//         utilizando o map()
-//
-       Stream<Fabricante> fabricanteStream = produtos.stream()
-                .filter(Produto::temEstoque)
-                .map(Produto::getFabricante);
-//      é passado uma interface funcional Function no map para realizar o mapeamento (transformação)
-//       no exemplo o map() retorna uma stream de fabricante.
-       fabricanteStream.forEach(System.out::println);
-//
-//
-//       enxugando o codigo
-//
+//       fabricanteStream.forEach(System.out::println);
+
+//     enxugando o codigo e obtendo elementos distintos
         produtos.stream()
                 .filter(Produto::temEstoque)
                 .map(Produto::getFabricante)
+                .distinct()
                 .forEach(System.out::println);
+
+//       é passado uma interface funcional Function no map para realizar o mapeamento (transformação)
+//       no exemplo o map() retorna uma stream de fabricante.
+//       para obter elementos distintos é necessario o uso do distinct porem é preciso ter o metodo equals
+//       implementado na classe. no caso do exemplo na classe Fabricante.
 //      ------------------------------------------------------------
 //
 //      ordenando elementos de stream utilizando o metodo sorted.

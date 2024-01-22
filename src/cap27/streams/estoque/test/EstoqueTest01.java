@@ -1,8 +1,10 @@
 package cap27.streams.estoque.test;
 
 import cap27.streams.estoque.domain.CadastroProduto;
+import cap27.streams.estoque.domain.Fabricante;
 import cap27.streams.estoque.domain.Produto;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -12,16 +14,52 @@ public class EstoqueTest01 {
         var cadastroDeProdutos = new CadastroProduto();
         List<Produto> produtos = cadastroDeProdutos.obterTodos();
 
-
-
-
-
-
-
-
-
-
-
+//
+//         utilizando o map()
+//
+       Stream<Fabricante> fabricanteStream = produtos.stream()
+                .filter(Produto::temEstoque)
+                .map(Produto::getFabricante);
+//      é passado uma interface funcional Function no map para realizar o mapeamento (transformação)
+//       no exemplo o map() retorna uma stream de fabricante.
+       fabricanteStream.forEach(System.out::println);
+//
+//
+//       enxugando o codigo
+//
+        produtos.stream()
+                .filter(Produto::temEstoque)
+                .map(Produto::getFabricante)
+                .forEach(System.out::println);
+//      ------------------------------------------------------------
+//
+//      ordenando elementos de stream utilizando o metodo sorted.
+//      caso queira ordenar os elementos de forma natural é preciso que implemente a interface Comparator na classe
+//      em questao.
+//
+//        produtos.stream()
+//                .filter(Produto::temEstoque)
+//                .sorted(Comparator.comparingInt(Produto::getQuantidade))
+//                .forEach(produto -> System.out.printf("%s = %d unidades%n", produto.getNome(), produto.getQuantidade()));
+//
+//
+//     ------------------------------------------------------------
+//        trabalhando com anyMatch , allMatch e NoneMatch
+//        boolean temProdutoNoEstoque = produtos.stream()
+//                .anyMatch(Produto::temEstoque);
+//
+//        System.out.println(temProdutoNoEstoque);// true;
+//
+//        boolean todosProdutoPossuemEstoque = produtos.stream()
+//                .allMatch(Produto::temEstoque);
+//
+//        System.out.println(todosProdutoPossuemEstoque);// false;
+//
+//        boolean nenhumProdutoPossuiEstoque = produtos.stream()
+//                .noneMatch(Produto::temEstoque);
+//
+//        System.out.println(nenhumProdutoPossuiEstoque);//false
+//      ------------------------------------------------------------
 //        trabalhando com findFirst e findAny
 //        Optional<Produto> produtoOptional = produtos.stream()
 //                .filter(Produto::temEstoque)
@@ -34,7 +72,7 @@ public class EstoqueTest01 {
 //        System.out.println(produto);
 
 
-//        System.out.println("----------------------------------");
+//        ------------------------------------------------------------
 
 
 //        criando uma pipeline mais enxuta
@@ -45,7 +83,7 @@ public class EstoqueTest01 {
 //                .forEach(System.out::println);
 
 
-
+//        ------------------------------------------------------------
         /*
         um stream possui 3 partes
         1 = fonte de dados (lista de produto)
@@ -53,6 +91,7 @@ public class EstoqueTest01 {
         3 = operacoes terminais
         * */
 
+//        ------------------------------------------------------------
 //        Stream<Produto> stream = produtos.stream();
 //
 //        //utilizando o metodo filter

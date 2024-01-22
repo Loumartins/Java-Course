@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
 
 public class EstoqueTest01 {
@@ -17,12 +18,27 @@ public class EstoqueTest01 {
         List<Produto> produtos = cadastroDeProdutos.obterTodos();
 
 
+//       IntBinaryOperator operadoraSoma = Integer::sum;
+//       int totalEstoque =  produtos.stream()
+//                .mapToInt(Produto::getQuantidade)
+//                .reduce(0, operadoraSoma);
+//
+//
+//        System.out.println(totalEstoque);
+
+//      refatorando operação
+
+//        int totalEstoque =  produtos.stream()
+//                .mapToInt(Produto::getQuantidade)
+//                .reduce(0, Integer::sum);
+//        System.out.println(totalEstoque);
+//        ------------------------------------------------------------
 //       usando as especializações de Stream para inteiros
 
-        produtos.stream()
-                .filter(Produto::temEstoque)
-                .mapToInt(Produto::getQuantidade)
-                .forEach(System.out::println);
+//        produtos.stream()
+//                .filter(Produto::temEstoque)
+//                .mapToInt(Produto::getQuantidade)
+//                .forEach(System.out::println);
 
 
 //        ------------------------------------------------------------

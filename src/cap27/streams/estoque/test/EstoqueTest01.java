@@ -6,25 +6,40 @@ import cap27.streams.estoque.domain.Fabricante;
 import cap27.streams.estoque.domain.Produto;
 
 import java.math.BigDecimal;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.function.IntBinaryOperator;
 import java.util.stream.Stream;
 
 public class EstoqueTest01 {
     public static void main(String[] args) {
         var cadastroDeProdutos = new CadastroProduto();
-        List<Produto> produtos = cadastroDeProdutos.obterTodos();
+//        List<Produto> produtos = cadastroDeProdutos.obterTodos();
+
+        List<Produto> produtos = new ArrayList<>();
+
+//        operacoes de redução retornando um optional
+
+       OptionalInt maiorQuantidadeOptional =  produtos.stream()
+                .mapToInt(Produto::getQuantidade)
+                .reduce(Integer::max);
+
+       int maiorQuantidade = maiorQuantidadeOptional.
+               orElseThrow(() -> new RuntimeException("Quantidade nao encontrada"));
+
+        System.out.println(maiorQuantidade);
+
+
+//        ------------------------------------------------------------
+
 
         //reduzindo um streams de produtos em BigDecimal -> o valor do estoque total
-        BigDecimal valorEmEstoque = produtos.stream()
-                .map(produto -> produto.getPreco().multiply(new BigDecimal(produto.getQuantidade())))
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
+//        BigDecimal valorEmEstoque = produtos.stream()
+//                .map(produto -> produto.getPreco().multiply(new BigDecimal(produto.getQuantidade())))
+//                .reduce(BigDecimal.ZERO, BigDecimal::add);
+//
+//        System.out.println(valorEmEstoque);
 
-        System.out.println(valorEmEstoque);
-
+//        ------------------------------------------------------------
 
 
 //       IntBinaryOperator operadoraSoma = Integer::sum;

@@ -2,6 +2,7 @@ package cap27.streams.estoque.test;
 
 import cap27.streams.estoque.domain.CadastroProduto;
 import cap27.streams.estoque.domain.Categoria;
+import cap27.streams.estoque.domain.Fabricante;
 import cap27.streams.estoque.domain.Produto;
 
 
@@ -14,14 +15,21 @@ public class EstoqueTest01 {
         var cadastroDeProdutos = new CadastroProduto();
         List<Produto> produtos = cadastroDeProdutos.obterTodos();
 
-//      coletando elementos do Stream em lista
+//      coletando elementos da Stream em mapas
 
-       List<Categoria> categorias = produtos.stream()
+        Map<String, Integer> produto = produtos.stream()
                 .filter(Produto::temEstoque)
-                .flatMap(produto-> produto.getCategorias().stream())
-                .distinct()
-                .collect(Collectors.toList());
+                .collect(Collectors.toMap(Produto::getNome, Produto::getQuantidade));
 
-        System.out.println(categorias);
+        System.out.println(produto);
+
+        System.out.println("--------------------");
+//       gerando mapas agrupados
+
+        Map<Fabricante, List<Produto>> produtosPorFabricante = produtos.stream()
+                .filter(Produto::temEstoque)
+                .collect(Collectors.groupingBy(Produto::getFabricante));
+        System.out.println(produtosPorFabricante);
+
     }
 }

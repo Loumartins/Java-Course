@@ -15,21 +15,28 @@ public class EstoqueTest01 {
         var cadastroDeProdutos = new CadastroProduto();
         List<Produto> produtos = cadastroDeProdutos.obterTodos();
 
-//      coletando elementos da Stream em mapas
+        // coletando os produtos por fabricante
 
-        Map<String, Integer> produto = produtos.stream()
+        Map<String,Long> produtosPorFabricante = produtos.stream()
                 .filter(Produto::temEstoque)
-                .collect(Collectors.toMap(Produto::getNome, Produto::getQuantidade));
+                .collect(Collectors.groupingBy(produto -> produto.getFabricante().nome(),
+                        Collectors.counting()));
 
-        System.out.println(produto);
-
-        System.out.println("--------------------");
-//       gerando mapas agrupados
-
-        Map<Fabricante, List<Produto>> produtosPorFabricante = produtos.stream()
-                .filter(Produto::temEstoque)
-                .collect(Collectors.groupingBy(Produto::getFabricante));
         System.out.println(produtosPorFabricante);
 
-    }
+        System.out.println("-------------------------------");
+
+        // coletando estoque de produtos por Fabricante
+
+        Map<String, Integer> estoquePorFabricante = produtos.stream()
+                .filter(Produto::temEstoque)
+                .collect(Collectors.groupingBy(produto -> produto.getFabricante().nome(),
+                        Collectors.summingInt(Produto::getQuantidade)));
+
+        System.out.println(estoquePorFabricante);
+
+
+//        outras formas de obter instancias de stream
+
+     }
 }

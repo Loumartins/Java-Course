@@ -4,15 +4,22 @@ import java.io.File;
 import java.io.IOException;
 
 public class Principal {
-    public static void main(String[] args) throws IOException {
-        File pasta1 = new File("C:\\Users\\luizh\\IdeaProjects\\Java-Course\\docs");
-//  criando pasta utilizando o mkdir()
-        pasta1.mkdir();
+    public static void main(String[] args) {
 
-//  utilizando a criação de arquivos pelo metodo createNewFile();
-        File arquivo1 = new File
-                ("C:\\Users\\luizh\\IdeaProjects\\Java-Course\\docs\\arquivo.txt");
+        //renomendo pasta
+//        File file1 = new File("docs");
+        File file2 = new File("documentos");
+//        System.out.println(file1.renameTo(file2));
 
-        arquivo1.createNewFile();
+        //excluindo pasta
+
+        File arquivo1 = new File(file2, "arquivo.txt");
+
+        arquivo1.delete();
+
+
+        file2.delete();
+
+
     }
 }
